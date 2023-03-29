@@ -1,7 +1,7 @@
-const employeeServices=require('../services/employee.service');
-const getEmployee = async(req,res) => {
+const employeeServices=require('../services/employeeAddress.services');
+const getEmployeeAddress = async(req,res) => {
     
-    callService(employeeServices.getEmployeeServices,req,res)
+    callService(employeeServices.getEmployeeServicesAddress,req,res)
     
     }
 
@@ -21,7 +21,7 @@ const getEmployee = async(req,res) => {
     }
     module.exports={
        
-        getEmployee,
+        getEmployeeAddress,
        
         callService
     }

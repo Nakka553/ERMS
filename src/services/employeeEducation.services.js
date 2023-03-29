@@ -1,9 +1,9 @@
-const employeeModel=require('../models/employee.model');
+const employeeModel=require('../models/employeeEducation.model');
 
-const getEmployeeServices = async (req) =>{
+const getEmployeeServicesEducation = async (req) =>{
     try {
         // let data = req.params;
-        let result=await employeeModel.getEmployeeModel();
+        let result=await employeeModel.getEmployeeModelEducation();
         return {status:200,message:"success",data:result.recordsets}
     } catch (error) {
     return{status:401,message:"error",data:"something went wrong"}
@@ -12,6 +12,6 @@ const getEmployeeServices = async (req) =>{
 }
 module.exports={
    
-    getEmployeeServices,
+    getEmployeeServicesEducation
     
 }

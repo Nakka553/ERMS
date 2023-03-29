@@ -5,8 +5,9 @@ const { endpoint, jwtKey } = require('../config');
 
 const { poolPromise } = require('../database');
 
-const employeesRouter = require("../src/routers/employees.routes");
-
+const employeesRouter = require("../src/routers/employee.router");
+const employeeAddressRouter=require("../src/routers/employeeAddress.router")
+const employeeEducationRouter=require("../src/routers/employeeEducation.router")
 
 module.exports = () => {
   poolPromise;
@@ -23,7 +24,7 @@ module.exports = () => {
       next();
     }
   })
-  app.use(endpoint, employeesRouter);
+  app.use(endpoint, employeesRouter,employeeAddressRouter,employeeEducationRouter);
 
 
   return app;
