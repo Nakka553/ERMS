@@ -5,7 +5,10 @@ const { endpoint, jwtKey } = require('../config');
 
 const { poolPromise } = require('../database');
 
-const employeesRouter = require("../src/routers/employees.routes");
+const leaveRouter = require("../src/routers/leave.router");
+const projectRouter = require("../src/routers/project.router");
+const departmentRouter = require("../src/routers/department.router");
+
 
 
 module.exports = () => {
@@ -23,7 +26,7 @@ module.exports = () => {
       next();
     }
   })
-  app.use(endpoint, employeesRouter);
+  app.use(endpoint, leaveRouter,projectRouter,departmentRouter);
 
 
   return app;
