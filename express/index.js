@@ -8,6 +8,10 @@ const { poolPromise } = require('../database');
 const rolesRouter = require("../src/routers/roles.routers");
 const timesheetRouter = require("../src/routers/timesheet.routers");
 const workexperienceRouter = require("../src/routers/workexperience.routers");
+const leaveRouter = require("../src/routers/leave.router");
+const projectRouter = require("../src/routers/project.router");
+const departmentRouter = require("../src/routers/department.router");
+
 
 
 module.exports = () => {
@@ -26,6 +30,7 @@ module.exports = () => {
     }
   })
   app.use(endpoint, rolesRouter,timesheetRouter,workexperienceRouter);
+  app.use(endpoint, leaveRouter,projectRouter,departmentRouter);
 
 
   return app;
