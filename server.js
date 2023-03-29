@@ -1,6 +1,6 @@
 require('dotenv').config()
 const server = require('./express')()
-const  {port} = require('./config');
+const  {port}  = require('./config');
 
 server.listen(port, async () => {
     console.log(

@@ -8,6 +8,11 @@ const { poolPromise } = require('../database');
 const employeesRouter = require("../src/routers/employee.router");
 const employeeAddressRouter=require("../src/routers/employeeAddress.router")
 const employeeEducationRouter=require("../src/routers/employeeEducation.router")
+const leaveRouter = require("../src/routers/leave.router");
+const projectRouter = require("../src/routers/project.router");
+const departmentRouter = require("../src/routers/department.router");
+
+
 
 module.exports = () => {
   poolPromise;
@@ -25,6 +30,7 @@ module.exports = () => {
     }
   })
   app.use(endpoint, employeesRouter,employeeAddressRouter,employeeEducationRouter);
+  app.use(endpoint, leaveRouter,projectRouter,departmentRouter);
 
 
   return app;
