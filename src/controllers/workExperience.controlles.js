@@ -1,8 +1,8 @@
-const timesheetServices=require('../services/timesheet.service');
+const workExperienceServices=require('../services/workExperience.services');
 
-const getTimesheet = async(req,res) => {
+const getWorkExperience = async(req,res) => {
     
-    callService(timesheetServices.getTimeSheetServices,req,res)
+    callService(workExperienceServices.getWorkExperienceServices,req,res)
     
 }
 
@@ -22,6 +22,6 @@ const callService = async (method, req, res) => {
 }
 
 module.exports={
-    getTimesheet,
+    getWorkExperience,
     callService
 }

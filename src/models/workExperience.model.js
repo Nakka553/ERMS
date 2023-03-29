@@ -1,8 +1,8 @@
 const {poolPromise}=require('../../database');
 
-const getTimesheetModel = async() =>{
+const getWorkExperienceModel = async() =>{
     try {
-        let q=`EXECUTE SP_get_TimeSheet`
+        let q=`EXECUTE SP_get_employeeWorkExperience`
         return await executeQuery(q)
     } catch (error) {
         throw new Error(err);
@@ -20,5 +20,5 @@ const executeQuery=async(query)=>{
 }
 
 module.exports={
-    getTimesheetModel
+    getWorkExperienceModel
 }

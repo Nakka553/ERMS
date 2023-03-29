@@ -1,8 +1,8 @@
-const timesheetServices=require('../services/timesheet.service');
+const roleServices=require('../services/roles.service');
 
-const getTimesheet = async(req,res) => {
+const getRoles = async(req,res) => {
     
-    callService(timesheetServices.getTimeSheetServices,req,res)
+    callService(roleServices.getRolesServices,req,res)
     
 }
 
@@ -22,6 +22,6 @@ const callService = async (method, req, res) => {
 }
 
 module.exports={
-    getTimesheet,
+    getRoles,
     callService
 }
