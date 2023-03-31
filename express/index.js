@@ -5,17 +5,15 @@ const { endpoint, jwtKey } = require('../config');
 
 const { poolPromise } = require('../database');
 
-
+const employeesRouter = require("../src/routers/employee.router");
 const rolesRouter = require("../src/routers/roles.routers");
 const timesheetRouter = require("../src/routers/timesheet.routers");
-const workexperienceRouter = require("../src/routers/workexperience.routers");
-const employeesRouter = require("../src/routers/employee.router");
-const employeeAddressRouter=require("../src/routers/employeeAddress.router")
-const employeeEducationRouter=require("../src/routers/employeeEducation.router")
+const employeeAddressRouter = require("../src/routers/timesheet.routers");
+const employeeEducationRouter = require("../src/routers/timesheet.routers");
+const workexperienceRouter = require("../src/routers/timesheet.routers");
 const leaveRouter = require("../src/routers/leave.router");
 const projectRouter = require("../src/routers/project.router");
 const departmentRouter = require("../src/routers/department.router");
-
 
 
 module.exports = () => {
