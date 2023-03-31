@@ -1,11 +1,3 @@
-const workExperienceServices=require('../services/workExperience.services');
-
-const getWorkExperience = async(req,res) => {
-    
-    callService(workExperienceServices.getWorkExperienceServices,req,res)
-    
-}
-
 const callService = async (method, req, res) => {
     try {
         var result = await method(req);
@@ -20,8 +12,4 @@ const callService = async (method, req, res) => {
         })
     }
 }
-
-module.exports={
-    getWorkExperience,
-    callService
-}
+module.exports={callService}
