@@ -4,16 +4,22 @@ const cors = require("cors");
 const { endpoint, jwtKey } = require('../config');
 const { poolPromise } = require('../database');
 
+<<<<<<< HEAD
+=======
+const employeeRouter = require("../src/routers/employee.router");
+>>>>>>> 6d568de804396042d465b1c309593e1037ba53c9
 const rolesRouter = require("../src/routers/roles.routers");
 const timesheetRouter = require("../src/routers/timesheet.routers");
-const workexperienceRouter = require("../src/routers/workexperience.routers");
-const employeesRouter = require("../src/routers/employee.router");
-const employeeAddressRouter=require("../src/routers/employeeAddress.router")
-const employeeEducationRouter=require("../src/routers/employeeEducation.router")
+
+
 const leaveRouter = require("../src/routers/leave.router");
 const projectRouter = require("../src/routers/project.router");
 const departmentRouter = require("../src/routers/department.router");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d568de804396042d465b1c309593e1037ba53c9
 module.exports = () => {
   poolPromise;
   const app = express();
@@ -29,6 +35,7 @@ module.exports = () => {
     }
   })
 
+<<<<<<< HEAD
   app.use(endpoint, rolesRouter);
   app.use(endpoint, timesheetRouter);
   app.use(endpoint, employeeAddressRouter);
@@ -38,6 +45,12 @@ module.exports = () => {
   app.use(endpoint, leaveRouter);
   app.use(endpoint, projectRouter);
   app.use(endpoint, departmentRouter);
+=======
+  app.use(endpoint, rolesRouter,timesheetRouter);
+  app.use(endpoint, employeeRouter);
+  app.use(endpoint, leaveRouter,projectRouter,departmentRouter);
+
+>>>>>>> 6d568de804396042d465b1c309593e1037ba53c9
 
   return app;
 }
