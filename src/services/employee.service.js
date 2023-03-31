@@ -156,10 +156,29 @@ const getWorkExperienceServices = async (req) =>{
         
     }
 }
+
+//ADD ALL EMPLOYEE DETAILS
+const addAllEmployeeServices = async (req) => {
+  try {
+      let data = req.body;
+      let result =await employeemodel.checkEmployeeDetailsModel(data);
+      if(result?.recordset?.length>0){
+        return { status: 300, message: "Employee Already existed", data: []}
+      }
+      await employeemodel.addAllEmployeeDetailsModel(data)
+      return { status: 200, message: "success", data: []}
+  } 
+  catch (error) {
+      console.log(error)
+       return { status: 400, message: "error", data: "something went wrong" }
+      
+  }
+}
 module.exports={
     getallEmployeeDetailsServices,
     getEmployeeServices,
     getEmployeeServicesAddress,
     getEmployeeServicesEducation,
-    getWorkExperienceServices
+    getWorkExperienceServices,
+    addAllEmployeeServices
 }
