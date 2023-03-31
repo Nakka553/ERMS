@@ -1,5 +1,6 @@
 const employeeServices = require('../services/employee.service');
-const { callService } = require('../controllers/callService')
+const { callService } = require('../controllers/callService');
+
 const getEmployee = async (req, res) => {
 
     callService(employeeServices.getEmployeeServices, req, res)
@@ -10,6 +11,13 @@ const getallEmployeeDetails = async (req, res) => {
     callService(employeeServices.getallEmployeeDetailsServices, req, res)
 
 }
+
+const editAllEmployeesDetailsServices = async (req, res) => {
+
+    callService(employeeServices.editAllEmployeesDetailsServices, req, res)
+
+}
+
 const getEmployeeAddress = async (req, res) => {
 
     callService(employeeServices.getEmployeeServicesAddress, req, res)
@@ -33,6 +41,7 @@ module.exports = {
 
     getEmployee,
     getallEmployeeDetails,
+    editAllEmployeesDetailsServices,
     getEmployeeAddress,
     getEmployeeEducation,
     getWorkExperience,
