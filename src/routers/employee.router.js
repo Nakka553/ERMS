@@ -8,6 +8,7 @@ router.get('/getemployeeAddress',employee.getEmployeeAddress);
 router.get('/getemployeeEducation',employee.getEmployeeEducation);
 router.get('/getWorkExperience',employee.getWorkExperience);
 router.get('/getemployee',employee.getEmployee);
+router.post('/addAllEmployeeDetails',employee.addAllEmployeeDetails)
 
 module.exports=router;
 

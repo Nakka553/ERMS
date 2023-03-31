@@ -1,4 +1,4 @@
-const {poolPromise}=require('../../database');
+const executeQuery = require('../models/executeQuery')
 
 const getProjectModel = async() =>{
     try {
@@ -17,17 +17,6 @@ const addProjectModel = async() =>{
     } catch (error) {
         throw new Error(err);
         
-    }
-}
-
-
-const executeQuery=async(query)=>{
-    try{
-        let pool=await poolPromise;
-        return await pool.query(query);
-    
-    }catch(err){
-        throw new Error(err);
     }
 }
 

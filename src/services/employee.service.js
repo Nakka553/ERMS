@@ -3,7 +3,10 @@ const employeeModel = require('../models/employee.model');
 const getEmployeeServices = async (req) => {
   try {
     // let data = req.parais;
+
+
     let result = await employeeModel.getEmployeeModel();
+
     return { status: 200, message: "success", data: result.recordsets }
   } catch (error) {
     return { status: 400, message: "error", data: "something went wrong" }
@@ -11,10 +14,14 @@ const getEmployeeServices = async (req) => {
   }
 }
 
+
+
+
 const getallEmployeeDetailsServices = async (req) => {
   try {
+    // let data = req.parais;
     let result = await employeeModel.getallEmployeeDetailsModel();
-   
+    
     const finalresult = {};
 
     result.recordsets.forEach((element) => {
@@ -96,6 +103,7 @@ const getEmployeeServicesAddress = async (req) => {
   try {
     // let data = req.parais;
     let result = await employeeModel.getEmployeeModelAddress();
+
     return { status: 200, message: "success", data: result.recordsets }
   } catch (error) {
     return { status: 401, message: "error", data: "something went wrong" }
@@ -113,6 +121,26 @@ const getEmployeeServicesEducation = async (req) => {
 
   }
 }
+
+
+//ADD ALL EMPLOYEE DETAILS
+const addAllEmployeeServices = async (req) => {
+  try {
+      let data = req.body;
+      let result =await employeeModel.checkEmployeeDetailsModel(data);
+      if(result?.recordset?.length>0){
+        return { status: 300, message: "Employee Already existed", data: []}
+      }
+      await employeemodel.addAllEmployeeDetailsModel(data)
+      return { status: 200, message: "success", data: []}
+  } 
+  catch (error) {
+      console.log(error)
+       return { status: 400, message: "error", data: "something went wrong" }
+      
+  }
+}
+
 const getWorkExperienceServices = async (req) => {
   try {
     // let data = req.parais;
@@ -130,5 +158,7 @@ module.exports = {
   getEmployeeServices,
   getEmployeeServicesAddress,
   getEmployeeServicesEducation,
-  getWorkExperienceServices
+  getWorkExperienceServices,
+  addAllEmployeeServices
+
 }
