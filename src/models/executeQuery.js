@@ -1,4 +1,4 @@
-const {poolPromise}=require('../../database');
+const { poolPromise }=require('../../database');
 
 const executeQuery=async(query)=>{
     try{
@@ -9,4 +9,5 @@ const executeQuery=async(query)=>{
         throw new Error(err);
     }
 }
+
 module.exports={executeQuery}
