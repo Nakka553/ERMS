@@ -34,9 +34,15 @@ module.exports = () => {
     }
   })
 
-  app.use(endpoint, rolesRouter,timesheetRouter,workexperienceRouter);
-  app.use(endpoint, employeesRouter,employeeAddressRouter,employeeEducationRouter);
-  app.use(endpoint, leaveRouter,projectRouter,departmentRouter);
+  app.use(endpoint, rolesRouter);
+  app.use(endpoint, timesheetRouter);
+  app.use(endpoint,workexperienceRouter);
+  app.use(endpoint, employeesRouter);
+  app.use(endpoint,employeeAddressRouter);
+  app.use(endpoint,employeeEducationRouter);
+  app.use(endpoint, leaveRouter);
+  app.use(endpoint,projectRouter);
+  app.use(endpoint,departmentRouter);
 
 
   return app;
