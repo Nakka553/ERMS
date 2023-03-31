@@ -5,6 +5,10 @@ const getRoles = async(req,res) => {
     callService(roleServices.getRolesServices,req,res)
     
 }
+const addroles=async(req,res)=>{
+    callService(roleServices.addRoleServices,req,res)
+
+}
 
 const callService = async (method, req, res) => {
     try {
@@ -15,7 +19,7 @@ const callService = async (method, req, res) => {
             data: result.data
         })
     } catch (err) {
-        res.status(401).json({
+        res.status(400).json({
             message: "Error"
         })
     }
@@ -23,5 +27,6 @@ const callService = async (method, req, res) => {
 
 module.exports={
     getRoles,
+    addroles,
     callService
 }

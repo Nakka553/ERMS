@@ -2,14 +2,10 @@ const employeemodel=require('../models/employee.model');
 
 const getEmployeeServices = async (req) =>{
     try {
-<<<<<<< HEAD
         // let data = req.params;
         let result=await employeeModel.getEmployeeModel();
         return {status:200,message:"success",data:result.recordsets[0]}
-=======
-        // let data = req.parais;
-        let result=await employeeiodel.getEmployeemodel();
-        return {status:200,message:"success",data:result.recordsets}
+
     } catch (error) {
     return{status:400,message:"error",data:"something went wrong"}
         
@@ -154,8 +150,7 @@ const getWorkExperienceServices = async (req) =>{
     try {
         // let data = req.parais;
         let result=await employeemodel.getWorkExperienceModel();
-        return {status:200,message:"success",data:result.recordsets}
->>>>>>> 6d568de804396042d465b1c309593e1037ba53c9
+        return {status:200,message:"success",data:result.recordsets[0]}
     } catch (error) {
     return{status:401,message:"error",data:"something went wrong"}
         
