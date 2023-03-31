@@ -5,6 +5,10 @@ const getTimesheet = async(req,res) => {
     callService(timesheetServices.getTimeSheetServices,req,res)
     
 }
+const addTimeSheet=async(req,res)=>{
+    callService(timesheetServices.addTimeSheetServices,req,res)
+
+}
 
 const callService = async (method, req, res) => {
     try {
@@ -23,5 +27,6 @@ const callService = async (method, req, res) => {
 
 module.exports={
     getTimesheet,
+    addTimeSheet,
     callService
 }
