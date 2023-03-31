@@ -4,7 +4,6 @@ const getEmployeeServices = async (req) => {
   try {
     // let data = req.parais;
 
-
     let result = await employeeModel.getEmployeeModel();
 
     return { status: 200, message: "success", data: result.recordsets }
@@ -15,28 +14,32 @@ const getEmployeeServices = async (req) => {
 }
 
 
-
-
 const getallEmployeeDetailsServices = async (req) => {
   try {
     // let data = req.parais;
     let result = await employeeModel.getallEmployeeDetailsModel();
-    
-    const finalresult = {};
 
-    result.recordsets.forEach((element) => {
-      element.forEach((i) => {
-        finalresult['id'] = i.EMPLOYEE_ID;
-        finalresult['name'] = i.FIRST_NAME + ' ' + i.MIDDLE_NAME + ' ' + i.LAST_NAME;
-        finalresult['gender'] = i.GENDER;
-        finalresult['mobileNumber'] = i.CONTACT_NUMBER;
-        finalresult['email'] = i.EMAIL_ID;
-        finalresult['pancardno'] = i.PANCARD_NUMBER;
-        finalresult['dob'] = i.DOB;
-        finalresult['aadharNo'] = i.AADHAR_NUMBER;
+    let finalArray = []
+    // let x = {};
+
+    if (result?.recordset?.length > 0) {
+      result.recordset.forEach((i) => {
+        let x={}
+        x['id'] = i.EMPLOYEE_ID;
+        x['name'] = i.FIRST_NAME + ' ' + i.MIDDLE_NAME + ' ' + i.LAST_NAME;
+        x['gender'] = i.GENDER;
+        x['mobileNumber'] = i.CONTACT_NUMBER;
+        x['email'] = i.EMAIL_ID;
+        x['pancardno'] = i.PANCARD_NUMBER;
+        x['dob'] = i.DOB;
+        x['aadharNo'] = i.AADHAR_NUMBER;
+        x['employeeNumber']=i.EMPLOYEE_NUMBER;
+        x['blood group']=i.BLOOD_GROUP;
+        x['activationStatus']=i.ACTIVATION_STATUS
+
 
         //  address record 
-        finalresult['address'] = {
+        x['address'] = {
           'Hno': i.HOUSE_NO,
           'Streetname': i.STREET_NAME,
           'city': i.CITY,
@@ -47,7 +50,7 @@ const getallEmployeeDetailsServices = async (req) => {
         };
 
         //  experienece record 
-        finalresult['experience'] = {
+        x['experience'] = {
           'companyname': i.COMPANY_NAME,
           'designation': i.DESIGNATION,
           'fromdate': i.FROM_DATE,
@@ -55,7 +58,7 @@ const getallEmployeeDetailsServices = async (req) => {
         };
 
         //  education record
-        finalresult['education'] = {
+        x['education'] = {
           'tenth': i.TENTH,
           'boardname': i.BOARD_NAME,
           'passedyear': i.PASSEDOUT_YEAR,
@@ -74,10 +77,16 @@ const getallEmployeeDetailsServices = async (req) => {
           'pg-percentage': i.PG_PERCENTAGE
 
         };
-      });
-    });
-    return {
-      status: 200, Message: "success", data: finalresult
+
+        console.log("i", i)
+        // return i
+        finalArray.push(x)
+      }
+      );
+      return { status: 200, message: "success", data: finalArray }
+
+    } else {
+      return { status: 400, message: "not found", data: [] }
     }
   } catch (error) {
     return { status: 400, message: "error", data: "something went wrong" }
@@ -85,13 +94,14 @@ const getallEmployeeDetailsServices = async (req) => {
   }
 }
 
+
 const editAllEmployeesDetailsServices = async (req) => {
   try {
     let data = req.body;
-    let result = await employeeModel.checkEmployeeDetailsModel(data);
-    if(result?.recordset?.length>0){
-      return { status: 300, message: "Employee Already Existed", data: [] }
-    }
+    // let result = await employeeModel.checkEmployeeDetailsModel(data);
+    // if(result?.recordset?.length>0){
+    //   return { status: 300, message: "Employee Already Existed", data: [] }
+    // }
     await employeeModel.editAllEmployeesDetailsModel(data);
     return { status: 200, message: "successfully updated", data: [] }
   } catch (error) {
