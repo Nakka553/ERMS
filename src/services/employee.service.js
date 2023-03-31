@@ -10,59 +10,7 @@ const getEmployeeServices = async (req) => {
 
   }
 }
-//const getallEmployeeDetailsServices = async (req) => {
-// try {
-//   // let data = req.parais;
-//   const result = await employeemodel.getallEmployeeDetailsModel();
 
-//   const finalArray = [];
-//   result.recordset.forEach((i) => {
-//     const finalresult = {};
-//     finalresult['id'] = i.EMPLOYEE_ID;
-//     finalresult['name'] = i.FIRST_NAME + ' ' + i.MIDDLE_NAME + ' ' + i.LAST_NAME;
-//     finalresult['gender'] = i.GENDER;
-//     finalresult['mobileNumber'] = i.CONTACT_NUMBER;
-//     finalresult['email'] = i.EMAIL_ID;
-//     finalresult['pancardno'] = i.PANCARD_NUMBER;
-//     finalresult['dob'] = i.DOB;
-//     finalresult['aadharNo'] = i.AADHAR_NUMBER;
-
-//     // address record
-//     if (i.HOUSE_NO && i.STREET_NAME && i.CITY && i.DISTRICT && i.STATE && i.PINCODE && i.COUNTRY) {
-//       finalresult['address'] = {
-//         'Hno': i.HOUSE_NO,
-//         'Streetname': i.STREET_NAME,
-//         'city': i.CITY,
-//         'district': i.DISTRICT,
-//         'state': i.STATE,
-//         'pincode': i.PINCODE,
-//         'country': i.COUNTRY
-//       };
-//     } else {
-//       finalresult['address'] = {};
-//     }
-
-//     // experienece record
-//     if (i.COMPANY_NAME && i.DESIGNATION && i.FROM_DATE && i.TO_DATE) {
-//       finalresult['experience'] = {
-//         'companyname': i.COMPANY_NAME,
-//         'designation': i.DESIGNATION,
-//         'fromdate': i.FROM_DATE,
-//         'todate': i.TO_DATE
-//       };
-//     } else {
-//       finalresult['experience'] = {};
-//     }
-
-//     // education record
-//     if (i.TENTH && i.BOARD_NAME && i.PASSEDOUT_YEAR && i.PERCENTAGE && i.INTERMEDIATE) {
-//       finalresult['education'] = {
-//         'tenth': i.TENTH,
-//         'boardname': i.BOARD_NAME,
-//         'passedyear': i.PASSEDOUT_YEAR,
-//         'percentage': i.PERCENTAGE,
-//         'intermediate': i.INTERMEDIATE,
-//         'interboard':i.INTER
 
 const getallEmployeeDetailsServices = async (req) => {
   try {
