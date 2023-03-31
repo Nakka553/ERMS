@@ -155,7 +155,7 @@ const getEmployeeServicesAddress = async (req) => {
 const getEmployeeServicesEducation = async (req) => {
   try {
     // let data = req.parais;
-    let result = await employeemodel.getEmployeeModelEducation();
+    let result = await employeeModel.getEmployeeModelEducation();
     return { status: 200, message: "success", data: result.recordsets }
   } catch (error) {
     return { status: 401, message: "error", data: "something went wrong" }
