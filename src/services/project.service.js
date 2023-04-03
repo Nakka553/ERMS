@@ -23,7 +23,27 @@ const addProjectServices = async (req) =>{
     }
 }
 
+const editProjectServices= async(req)=>{
+  try {
+    let data = req.body;
+        let result=await projectModel.editProjectModel(data);
+        return {status:200,message:"success",data:[]}
+  } catch (error) {
+    return{status:401,message:"error",data:"something went wrong"}
+  }
+}
+
+const deleteProjectServices=async(req)=>{
+  try {
+    let data = req.body;
+        let result=await projectModel.addProjectModel(data);
+  } catch (error) {
+    return{status:401,message:"error",data:"something went wrong"}
+  }
+}
+
 module.exports={
     getProjectServices,
-    addProjectServices
+    addProjectServices,
+    editProjectServices,deleteProjectServices
 }

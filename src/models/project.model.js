@@ -10,18 +10,26 @@ const getProjectModel = async() =>{
     }
 }
 
-const addProjectModel = async() =>{
+const addProjectModel = async(data) =>{
     try {
-        let q=`EXECUTE SP_post_projects '${data.PROJECT_NAME}','${data.START_DATE},'${data.END_DATE}','${data.PROJECT_MANAGER}'` 
+        let q=`EXECUTE SP_post_projects '${data.PROJECT_NAME}','${data.START_DATE}','${data.END_DATE}','${data.PROJECT_MANAGER}'` 
         return await executeQuery(q)
     } catch (error) {
-        throw new Error(err);
+        throw new Error(error);
         
     }
 }
 
+const editProjectModel = async (data)=>{
+    try {
+        let q= `EXECUTE SP_edit_projects '${data.PROJECT_ID}','${data.PROJECT_NAME}','${data.START_DATE}','${data.END_DATE}','${data.PROJECT_MANAGER}'`
+    } catch (error) {
+        throw new Error(error)
+    }
+}
 
 module.exports={
     getProjectModel,
-    addProjectModel
+    addProjectModel,
+    editProjectModel
 }

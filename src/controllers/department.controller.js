@@ -9,7 +9,13 @@ const addDepartmentController = async(req,res)=>{
     callService(departmentServices.addDepartmentServices,req,res);
 }
 
+const editDepartmentController = async(req,res)=>{
+    callService(departmentServices.editDepartmentServices,req,res);
+}
+
+
 module.exports={
     getDepartmentController,
-    addDepartmentController
+    addDepartmentController,
+    editDepartmentController
 };

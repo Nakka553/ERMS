@@ -9,7 +9,16 @@ const addProjectController = async(req,res)=>{
     callService(projectServices.addProjectServices,req,res);
 }
 
+const editProjectController = async(req,res)=>{
+    callService(projectServices.editProjectServices,req,res);
+}
+
+const deleteProjectController = async(req,res)=>{
+    callService(projectServices.deleteProjectServices,req,res)}
+    
 module.exports={
     getProjectController,
-    addProjectController
+    addProjectController,
+    editProjectController,
+    deleteProjectController
 };
