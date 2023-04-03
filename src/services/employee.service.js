@@ -87,11 +87,11 @@ const getallEmployeeDetailsServices = async () => {
           'TO_DATE': i.TO_DATE
         };
 
-        console.log("i", i)
+        // console.log("i", i)
         // return i
         finalArray.push(x)
       });
-      console.log(finalArray);
+      // console.log(finalArray);
       return { status: 200, message: "success", data: finalArray }
 
     } else {
