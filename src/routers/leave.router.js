@@ -6,4 +6,6 @@ router.get('/getLeave',leaveController.getLeaveController);
 router.post('/addLeave',leaveController.addLeaveController);
 router.put('/editLeave',leaveController.editLeaveController);
 
+router.put('/editLeave',leaveController.editLeaveController);
+
 module.exports=router;

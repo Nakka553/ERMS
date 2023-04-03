@@ -23,6 +23,8 @@ const addLeaveServices = async (req) =>{
         
     }
 }
+
+
 const editLeaveServices = async (req) =>{
     try {
         let data = req.body;
@@ -33,6 +35,7 @@ const editLeaveServices = async (req) =>{
         
     }
 }
+
 module.exports={
     getLeaveServices,
     addLeaveServices,

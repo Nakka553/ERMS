@@ -12,7 +12,7 @@ const getDepartmentModel = async() =>{
     }
 }
 
-const addDepartmentModel = async() =>{
+const addDepartmentModel = async(data) =>{
     try {
         let q=`EXECUTE SP_post_department '${data.DEPT_NAME}','${data.HOD}','${data.DEPT_EMAIL}','${data.DEPT_CONTACTNUMBER}'`
         return await executeQuery(q)
@@ -22,8 +22,18 @@ const addDepartmentModel = async() =>{
     }
 }
 
+const editDepartmentModel = async(data) =>{
+    try {
+        let q=`EXECUTE SP_edit_department '${data.DEPT_ID}','${data.DEPT_NAME}','${data.HOD}','${data.DEPT_EMAIL}','${data.DEPT_CONTACTNUMBER}'`
+        return await executeQuery(q)
+    } catch (error) {
+        throw new Error(err);
+        
+    }
+}
 
 module.exports={
     getDepartmentModel,
-    addDepartmentModel
+    addDepartmentModel,
+    editDepartmentModel
 }
