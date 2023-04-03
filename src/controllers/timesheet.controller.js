@@ -11,10 +11,14 @@ const addTimeSheet=async(req,res)=>{
 
 }
 
+const editTimeSheet=async(req,res)=>{
+    callService(timesheetServices.editTimeSheetServices,req,res)
+
+}
 
 
 module.exports={
     getTimesheet,
     addTimeSheet,
-    
+    editTimeSheet
 }

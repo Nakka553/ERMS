@@ -9,7 +9,6 @@ const addLeaveController = async(req,res)=>{
     callService(leaveServices.addLeaveServices,req,res);
 }
 
-
 const editLeaveController = async(req,res)=>{
     callService(leaveServices.editLeaveServices,req,res);
 }

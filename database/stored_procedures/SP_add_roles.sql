@@ -1,4 +1,4 @@
-CREATE procedure SP_add_roles(
+Alter procedure SP_add_roles(
     @ROLE_NAME VARCHAR(200),
 	@DEPARTMENT_NAME VARCHAR(200),
 	@ROLE_DESCRIPTION VARCHAR(200)

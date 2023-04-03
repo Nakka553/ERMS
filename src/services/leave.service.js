@@ -24,18 +24,17 @@ const addLeaveServices = async (req) =>{
     }
 }
 
+
 const editLeaveServices = async (req) =>{
     try {
         let data = req.body;
-        console.log(data);
-        await leaveModel.editLeaveModel(data);
+        let result=await leaveModel.editLeaveModel(data);
         return {status:200,message:"success",data:[]}
     } catch (error) {
     return{status:401,message:"error",data:"something went wrong"}
         
     }
 }
-
 
 module.exports={
     getLeaveServices,
