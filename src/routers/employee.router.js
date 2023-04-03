@@ -15,5 +15,6 @@ router.get('/getemployeeEducation',employee.getEmployeeEducation);
 router.get('/getWorkExperience',employee.getWorkExperience);
 router.get('/getemployee',employee.getEmployee);
 
+
 module.exports=router;
 
