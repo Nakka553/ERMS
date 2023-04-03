@@ -1,0 +1,9 @@
+CREATE PROCEDURE SP_delete_roles(
+    @ROLE_ID INT
+);
+AS
+BEGIN
+		DELETE FROM ROLES 
+		WHERE ROLE_ID  = @ROLE_ID
+ END
+    

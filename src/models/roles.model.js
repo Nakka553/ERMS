@@ -31,11 +31,20 @@ const editRoleDetailsModel=async(data)=>{
         throw new Error(err)  
     }
 }
+const deleteRolesModel = async (data) => {
+    try {
+        let q= `EXECUTE SP_delete_roles '${data.id}'`
+        return await executeQuery(q);
+    } catch (error) {
+        throw new Error(error)
+    }
+}
 
 
 
 module.exports={
     getRolesModel,
     addRoleDetailsModel,
-    editRoleDetailsModel
+    editRoleDetailsModel,
+    deleteRolesModel
 }

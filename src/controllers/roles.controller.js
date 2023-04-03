@@ -14,6 +14,10 @@ const editroles=async(req,res)=>{
     callService(roleServices.editRoleServices,req,res)
 
 }
+const deleteroles=async(req,res)=>{
+    callService(roleServices.deleteRoleServices,req,res)
+
+}
 
 
 
@@ -21,5 +25,6 @@ module.exports={
     getRoles,
     addroles,
     editroles,
+    deleteroles,
     callService
 }
