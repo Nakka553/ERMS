@@ -1,8 +1,8 @@
-const executeQuery = require('../models/executeQuery')
+const { executeQuery } = require('../models/executeQuery')
 
 const getProjectModel = async() =>{
     try {
-        let q=`EXECUTE SP_get_projects`
+        let q=`EXECUTE SP_getProject`
         return await executeQuery(q)
     } catch (error) {
         throw new Error(err);

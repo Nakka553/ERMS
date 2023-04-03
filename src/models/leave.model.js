@@ -1,5 +1,6 @@
-const executeQuery = require('../models/executeQuery')
 
+
+const { executeQuery } = require('../models/executeQuery')
 
 
 const getLeaveModel = async() =>{
