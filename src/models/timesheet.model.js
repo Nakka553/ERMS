@@ -29,10 +29,19 @@ const editTimeSheetDetailsModel=async(data)=>{
         throw new Error(err)  
     }
 }
+const deletetimesheetModel = async (data) => {
+    try {
+        let q= `EXECUTE SP_delete_timesheet '${data.id}'`
+        return await executeQuery(q);
+    } catch (error) {
+        throw new Error(error)
+    }
+}
 
 
 module.exports={
     getTimesheetModel,
     addTimeSheetDetailsModel,
-    editTimeSheetDetailsModel
+    editTimeSheetDetailsModel,
+    deletetimesheetModel
 }

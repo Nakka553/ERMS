@@ -41,8 +41,19 @@ const editTimeSheetServices = async (req) => {
         
     }
 }
+const deleteTimeSheetServices = async (req) =>{
+    try {
+  
+      let data = req.params;
+      let result = await timesheetModel.deletetimesheetModel(data);
+      return {status:200, message:"Successfully Deleted" ,data:[] }
+    } catch (error) {
+      return { status:400, message:"error", data:"Something Went Wrong" }
+    }
+  }
 module.exports={
     getTimeSheetServices,
     addTimeSheetServices,
-    editTimeSheetServices 
+    editTimeSheetServices,
+    deleteTimeSheetServices 
 }
