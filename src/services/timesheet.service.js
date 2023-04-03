@@ -25,7 +25,24 @@ const addTimeSheetServices = async (req) => {
         
     }
 }
+
+const editTimeSheetServices = async (req) => {
+    try {
+        let data = req.body;
+        console.log(data)
+        await timesheetModel.editTimeSheetDetailsModel(data)
+
+        return { status: 200, message: "success", data: []}
+
+    } 
+    catch (error) {
+        console.log(error)
+         return { status: 400, message: "error", data: "something went wrong" }
+        
+    }
+}
 module.exports={
     getTimeSheetServices,
-    addTimeSheetServices 
+    addTimeSheetServices,
+    editTimeSheetServices 
 }

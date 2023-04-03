@@ -1,5 +1,4 @@
-const {poolPromise}=require('../../database');
-
+const { executeQuery } = require('../models/executeQuery')
 // get call for roles table
 
 const getRolesModel = async() =>{
@@ -22,18 +21,21 @@ const addRoleDetailsModel=async(data)=>{
         throw new Error(err)  
     }
 }
-
-const executeQuery=async(query)=>{
-    try{
-        let pool=await poolPromise;
-        return await pool.query(query);
-    
-    }catch(err){
-        throw new Error(err);
+const editRoleDetailsModel=async(data)=>{
+    try {
+        let q=`EXECUTE SP_add_roles '${data.ROLE_NAME}','${data.DEPARTMENT_NAME}','${data.ROLE_DESCRIPTION}'`
+        return await executeQuery(q);
+    } 
+    catch (err) {
+        console.log(err)
+        throw new Error(err)  
     }
 }
 
+
+
 module.exports={
     getRolesModel,
-    addRoleDetailsModel
+    addRoleDetailsModel,
+    editRoleDetailsModel
 }
