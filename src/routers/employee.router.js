@@ -10,5 +10,6 @@ router.get('/getWorkExperience',employee.getWorkExperience);
 router.get('/getemployee',employee.getEmployee);
 router.post('/addAllEmployeeDetails',employee.addAllEmployeeDetails)
 
+
 module.exports=router;
 

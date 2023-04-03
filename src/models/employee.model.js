@@ -142,6 +142,7 @@ const checkEmployeeDetailsModel = async (data) => {
     }
 
 }
+
 module.exports = {
     getallEmployeeDetailsModel,
     editAllEmployeesDetailsModel,
@@ -150,6 +151,7 @@ module.exports = {
     getEmployeeModelEducation,
     getWorkExperienceModel,
     checkEmployeeDetailsModel,
-    addAllEmployeeDetailsModel
+    addAllEmployeeDetailsModel,
+    
 }
 
