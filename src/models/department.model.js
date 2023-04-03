@@ -22,7 +22,6 @@ const addDepartmentModel = async() =>{
     }
 }
 
-
 module.exports={
     getDepartmentModel,
     addDepartmentModel

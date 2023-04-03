@@ -47,13 +47,16 @@ const getEmployeeEducation= async(req,res) => {
       
 module.exports = {
 
-    getEmployee,
+    
     getallEmployeeDetails,
     editAllEmployeesDetailsController,
+    deleteAllEmployeesDetailsController,
+
+    getEmployee,
     getEmployeeAddress,
     getEmployeeEducation,
     getWorkExperience,
     addAllEmployeeDetails,
-    deleteAllEmployeesDetailsController,
+
     callService
 }
