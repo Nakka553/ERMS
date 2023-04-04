@@ -1,4 +1,4 @@
-CREATE PROCEDURE SP_delete_project
+ALTER PROCEDURE SP_delete_project
 (
     @PROJECT_ID INT
 )

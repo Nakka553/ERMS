@@ -33,7 +33,8 @@ const editProjectModel = async (data) =>
 
 const deleteProjectModel = async(data) => {
     try {
-        let q=`EXECUTE SP_delete_project '${data.id}`
+        let q=`EXECUTE SP_delete_project '${data.id}'`
+        return await executeQuery(q)
     } catch (error) {
         throw new Error(error)
 

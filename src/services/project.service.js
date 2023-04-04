@@ -33,12 +33,15 @@ const editProjectServices= async(req)=>{
   }
 }
 
-const deleteProjectServices=async(req)=>{
+const deleteProjectServices = async (req) =>{
   try {
-    let data = req.params;
-        let result=await projectModel.deleteProjectModel(data);
+      let data = req.params;
+      await projectModel.deleteProjectModel(data);
+      return {status:200,message:"success",data:[]}
   } catch (error) {
-    return{status:401,message:"error",data:"something went wrong"}
+      console.log(error);
+  return{status:401,message:"error",data:"something went wrong"}
+      
   }
 }
 
