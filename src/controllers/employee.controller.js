@@ -36,7 +36,12 @@ const getEmployeeEducation= async(req,res) => {
     const addAllEmployeeDetails=async(req,res)=>{
         callService(employeeServices.addAllEmployeeServices,req,res)
     
-    }    
+    } 
+    const deleteAllEmployeeDetils=async(req,res)=>{
+        callService(employeeServices.deleteAllEmplpoyeeServices,req,res)
+    
+    }
+
 module.exports = {
 
     getEmployee,
@@ -46,5 +51,6 @@ module.exports = {
     getEmployeeEducation,
     getWorkExperience,
     addAllEmployeeDetails,
+    deleteAllEmployeeDetils,  
     callService
 }

@@ -142,6 +142,16 @@ const checkEmployeeDetailsModel = async (data) => {
     }
 
 }
+const deleteAllEmployeeDetailsModel=async(data)=>{
+    try {
+        let q=`EXECUTE SP_delete_allEmployeesDetails '${data.id}'`
+        return await executeQuery(q);
+    } 
+    catch (err) {
+        console.log(err)
+        throw new Error(err)  
+    }
+}
 module.exports = {
     getallEmployeeDetailsModel,
     editAllEmployeesDetailsModel,
@@ -150,6 +160,7 @@ module.exports = {
     getEmployeeModelEducation,
     getWorkExperienceModel,
     checkEmployeeDetailsModel,
-    addAllEmployeeDetailsModel
+    addAllEmployeeDetailsModel,
+    deleteAllEmployeeDetailsModel
 }
 

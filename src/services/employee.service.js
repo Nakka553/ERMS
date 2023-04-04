@@ -114,7 +114,6 @@ const getEmployeeServicesEducation = async () => {
 
   }
 }
-
 const addAllEmployeeServices = async (req) => {
   try {
     let data = req.body;
@@ -156,7 +155,16 @@ const editAllEmployeesDetailsServices = async (req) => {
     return { status: 400, message: "error", data: error }
   }
 }
-
+const deleteAllEmplpoyeeServices = async (req) => {
+  try {
+      
+    let data=req.params;
+       await employeeModel.deleteAllEmployeeDetailsModel(data);
+      return { status: 200, message: "successfully deleted", data: [] }
+  } catch (error) {
+      return { status: 400, message: "error", data: "something went wrong" }
+  }
+}
 module.exports = {
   getallEmployeeDetailsServices,
   getEmployeeServices,
@@ -164,5 +172,6 @@ module.exports = {
   getEmployeeServicesEducation,
   getWorkExperienceServices,
   addAllEmployeeServices,
-  editAllEmployeesDetailsServices
+  editAllEmployeesDetailsServices,
+  deleteAllEmplpoyeeServices
 }
