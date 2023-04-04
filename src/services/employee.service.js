@@ -148,7 +148,7 @@ const editAllEmployeesDetailsServices = async (req) => {
   }
 }
 
-const deleteAllEmployeesDeatilsServices = async (req) =>{
+const  deleteAllEmployeesDeatilsServices = async (req) =>{
   try {
 
     let data = req.params;

@@ -36,7 +36,7 @@ const editLeaveModel = async(data) =>{
 
 const deleteLeaveModel = async(data) =>{
     try {
-        let q=`EXECUTE SP_edit_leaves '${data.id}'`
+        let q=`EXECUTE SP_delete_leave '${data.id}'`
         return await executeQuery(q)
     } catch (error) {
         throw new Error(error);

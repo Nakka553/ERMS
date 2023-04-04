@@ -93,7 +93,6 @@ const editAllEmployeesDetailsModel = async (data) => {
 
         return await executeQuery(q)
     } catch (error) {
-        console.log(error);
         throw new Error(error);
     }
 }
