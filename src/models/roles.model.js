@@ -32,6 +32,7 @@ const editRoleDetailsModel=async(data)=>{
         throw new Error(err)  
     }
 }
+
 const deleteRolesModel = async (data) => {
     try {
         let q= `EXECUTE SP_delete_roles '${data.id}'`

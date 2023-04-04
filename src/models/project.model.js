@@ -20,7 +20,7 @@ const addProjectModel = async(data) =>{
     }
 }
 
-const editProjectModel = async (data)=>{
+const editProjectModel = async (data) => {
     try {
         let q= `EXECUTE SP_edit_projects '${data.PROJECT_ID}','${data.PROJECT_NAME}','${data.START_DATE}','${data.END_DATE}','${data.PROJECT_MANAGER}'`
     } catch (error) {
@@ -28,8 +28,18 @@ const editProjectModel = async (data)=>{
     }
 }
 
+const deleteProjectModel = async(data) => {
+    try {
+        let q=`EXECUTE SP_delete_project '${data.id}`
+    } catch (error) {
+        throw new Error(error)
+
+    }
+}
+
 module.exports={
     getProjectModel,
     addProjectModel,
-    editProjectModel
+    editProjectModel,
+    deleteProjectModel
 }

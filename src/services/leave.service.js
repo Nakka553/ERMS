@@ -38,8 +38,22 @@ const editLeaveServices = async (req) =>{
     }
 }
 
+const deleteLeaveServices = async (req) =>{
+    try {
+        let data = req.params;
+        await leaveModel.deleteLeaveModel(data);
+        return {status:200,message:"success",data:[]}
+    } catch (error) {
+        console.log(error);
+    return{status:401,message:"error",data:"something went wrong"}
+        
+    }
+}
+
+
 module.exports={
     getLeaveServices,
     addLeaveServices,
-    editLeaveServices
+    editLeaveServices,
+    deleteLeaveServices
 }

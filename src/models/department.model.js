@@ -32,8 +32,19 @@ const editDepartmentModel = async(data) =>{
     }
 }
 
+const deleteDepartmentModel = async(data) =>{
+    try {
+        let q=`EXECUTE SP_delete_department '${data.id}'`
+        return await executeQuery(q)
+    } catch (error) {
+        throw new Error(err);
+        
+    }
+}
+
 module.exports={
     getDepartmentModel,
     addDepartmentModel,
-    editDepartmentModel
+    editDepartmentModel,
+    deleteDepartmentModel
 }

@@ -31,9 +31,22 @@ const editDepartmentServices = async (req) =>{
     }
 }
 
+
+const deleteDepartmentServices = async (req) =>{
+    try {
+        let data = req.params;
+        let result=await departmentModel.deleteDepartmentModel(data);
+        return {status:200,message:"success",data:[]}
+    } catch (error) {
+    return{status:401,message:"error",data:"something went wrong"}   
+    }
+}
+
+
 module.exports={
     getDepartmentServices,
     addDepartmentServices,
-    editDepartmentServices
+    editDepartmentServices,
+    deleteDepartmentServices
 
 }

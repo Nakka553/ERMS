@@ -13,8 +13,14 @@ const editLeaveController = async(req,res)=>{
     callService(leaveServices.editLeaveServices,req,res);
 }
 
+
+const deleteLeaveController = async(req,res)=>{
+    callService(leaveServices.deleteLeaveServices,req,res);
+}
+
 module.exports={
     getLeaveController,
     addLeaveController,
-    editLeaveController
+    editLeaveController,
+    deleteLeaveController
 };

@@ -34,8 +34,20 @@ const editLeaveModel = async(data) =>{
 }
 
 
+const deleteLeaveModel = async(data) =>{
+    try {
+        let q=`EXECUTE SP_edit_leaves '${data.id}'`
+        return await executeQuery(q)
+    } catch (error) {
+        throw new Error(error);
+        
+    }
+}
+
+
 module.exports={
     getLeaveModel,
     addLeaveModel,
-    editLeaveModel
+    editLeaveModel,
+    deleteLeaveModel
 }
