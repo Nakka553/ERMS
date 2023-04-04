@@ -1,0 +1,9 @@
+CREATE PROCEDURE SP_delete_leave(
+    @id int
+)
+
+AS
+BEGIN
+    DELETE FROM LEAVES
+    WHERE LEAVE_REQUEST_ID=@id
+END
