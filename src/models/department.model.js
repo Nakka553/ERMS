@@ -27,8 +27,7 @@ const editDepartmentModel = async(data) =>{
         let q=`EXECUTE SP_edit_department '${data.DEPT_ID}','${data.DEPT_NAME}','${data.HOD}','${data.DEPT_EMAIL}','${data.DEPT_CONTACTNUMBER}'`
         return await executeQuery(q)
     } catch (error) {
-        throw new Error(err);
-        
+        throw new Error(error);
     }
 }
 
@@ -37,8 +36,7 @@ const deleteDepartmentModel = async(data) =>{
         let q=`EXECUTE SP_delete_department '${data.id}'`
         return await executeQuery(q)
     } catch (error) {
-        throw new Error(err);
-        
+        throw new Error(error); 
     }
 }
 

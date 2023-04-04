@@ -21,7 +21,7 @@ const addTimeSheetDetailsModel=async(data)=>{
 }
 const editTimeSheetDetailsModel=async(data)=>{
     try {
-        let q=`EXECUTE SP_edit_TimeSheet '${data.EMPLOYEE_ID}','${data.EMPLOYEE_NAME}','${data.APPROVER_EMPLOYEE_NAME}','${data.PROJECT_NAME}','${data.TASK_DETAILS}','${data.START_DATE}','${data.END_DATE}','${data.APPROVER_STATUS}'`
+        let q=`EXECUTE SP_edit_TimeSheet '${data.TIMESHEET_ID}','${data.EMPLOYEE_NAME}','${data.APPROVER_EMPLOYEE_NAME}','${data.PROJECT_NAME}','${data.TASK_DETAILS}','${data.START_DATE}','${data.END_DATE}','${data.APPROVER_STATUS}'`
         return await executeQuery(q);
     } 
     catch (err) {
