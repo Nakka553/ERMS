@@ -24,7 +24,7 @@ const getallEmployeeDetailsServices = async () => {
         let x = {}
         x['EMPLOYEE_ID'] = i.EMPLOYEE_ID;
         x['FIRST_NAME'] = i.FIRST_NAME ;
-        x['MIDDLE_NAME '] = i.MIDDLE_NAME;
+        x['MIDDLE_NAME'] = i.MIDDLE_NAME;
         x['LAST_NAME'] = i.LAST_NAME;
         x['GENDER'] = i.GENDER;
         x['CONTACT_NUMBER'] = i.CONTACT_NUMBER;
