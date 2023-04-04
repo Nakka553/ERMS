@@ -1,5 +1,5 @@
 
-CREATE PROCEDURE SP_delete_leave(
+ALTER PROCEDURE SP_delete_leave(
    @LEAVE_REQUEST_ID  int
 )
 
