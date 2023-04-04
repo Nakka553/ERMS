@@ -31,7 +31,7 @@ const editTimeSheetDetailsModel=async(data)=>{
 }
 const deletetimesheetModel = async (data) => {
     try {
-        let q= `EXECUTE SP_delete_timesheet '${data.id}'`
+        let q= `EXECUTE SP_delete_timeSheet '${data.id}'`
         return await executeQuery(q);
     } catch (error) {
         throw new Error(error)
