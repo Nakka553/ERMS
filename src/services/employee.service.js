@@ -2,8 +2,7 @@ const employeeModel = require('../models/employee.model');
 
 const getEmployeeServices = async () => {
   try {
-    // let data = req.parais;
-    let result = await employeeModel.getEmployeemodel();
+    let result = await employeeModel.getEmployeeModel();
     return { status: 200, message: "success", data: result.recordsets }
   } catch (error) {
     return { status: 400, message: "error", data: "something went wrong" }
@@ -13,7 +12,7 @@ const getEmployeeServices = async () => {
 
 const getallEmployeeDetailsServices = async () => {
   try {
-    // let data = req.parais;
+    
     let result = await employeeModel.getallEmployeeDetailsModel();
 
     let finalArray = []
@@ -24,7 +23,7 @@ const getallEmployeeDetailsServices = async () => {
         let x = {}
         x['EMPLOYEE_ID'] = i.EMPLOYEE_ID;
         x['FIRST_NAME'] = i.FIRST_NAME ;
-        x['MIDDLE_NAME '] = i.MIDDLE_NAME;
+        x['MIDDLE_NAME'] = i.MIDDLE_NAME;
         x['LAST_NAME'] = i.LAST_NAME;
         x['GENDER'] = i.GENDER;
         x['CONTACT_NUMBER'] = i.CONTACT_NUMBER;
@@ -107,9 +106,26 @@ const getallEmployeeDetailsServices = async () => {
 
   }
 }
+const getEmployeeServicesAddress = async () => {
+  try {
+    // let data = req.parais;
+    let result = await employeeModel.getEmployeemodelAddress();
+    return { status: 200, message: "success", data: result.recordsets }
+  } catch (error) {
+    return { status: 401, message: "error", data: "something went wrong" }
 
+  }
+}
+const getEmployeeServicesEducation = async () => {
+  try {
+    // let data = req.parais;
+    let result = await employeeModel.getEmployeeModelEducation();
+    return { status: 200, message: "success", data: result.recordsets }
+  } catch (error) {
+    return { status: 401, message: "error", data: "something went wrong" }
 
-
+  }
+}
 const addAllEmployeeServices = async (req) => {
   try {
     let data = req.body;
@@ -153,11 +169,13 @@ const editAllEmployeesDetailsServices = async (req) => {
   }
 }
 
-const   deleteAllEmployeesDeatilsServices = async (req) =>{
+
+
+const  deleteAllEmployeesDeatilsServices = async (req) =>{
   try {
 
     let data = req.params;
-    let result = await employeeModel.deleteAllEmployeesModel(data);
+    let result = await employeeModel. deleteAllEmployeeDetailsModel(data);
     return {status:200, message:"Successfully Deleted" ,data:[] }
   } catch (error) {
     return { status:400, message:"error", data:"Something Went Wrong" }
@@ -166,26 +184,8 @@ const   deleteAllEmployeesDeatilsServices = async (req) =>{
 
 
 
-const getEmployeeServicesAddress = async () => {
-  try {
-    // let data = req.parais;
-    let result = await employeeModel.getEmployeeModelAddress();
-    return { status: 200, message: "success", data: result.recordsets }
-  } catch (error) {
-    return { status: 401, message: "error", data: "something went wrong" }
 
-  }
-}
-const getEmployeeServicesEducation = async () => {
-  try {
-    // let data = req.parais;
-    let result = await employeeModel.getEmployeeModelEducation();
-    return { status: 200, message: "success", data: result.recordsets }
-  } catch (error) {
-    return { status: 401, message: "error", data: "something went wrong" }
 
-  }
-}
 
 
 module.exports = {
@@ -198,4 +198,5 @@ module.exports = {
   editAllEmployeesDetailsServices,
   deleteAllEmployeesDeatilsServices
  
+
 }
