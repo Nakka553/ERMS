@@ -21,15 +21,11 @@ const addProjectModel = async(data) =>{
 }
 
 const editProjectModel = async (data) => 
-
-
-
-
-
-
 {
     try {
         let q= `EXECUTE SP_edit_projects '${data.PROJECT_ID}','${data.PROJECT_NAME}','${data.START_DATE}','${data.END_DATE}','${data.PROJECT_MANAGER}'`
+        return await executeQuery(q)
+
     } catch (error) {
         throw new Error(error)
     }
