@@ -22,8 +22,9 @@ const addRoleDetailsModel=async(data)=>{
     }
 }
 const editRoleDetailsModel=async(data)=>{
+
     try {
-        let q=`EXECUTE SP_add_roles '${data.ROLE_NAME}','${data.DEPARTMENT_NAME}','${data.ROLE_DESCRIPTION}'`
+        let q=`EXECUTE SP_edit_roles '${data.ROLE_ID}','${data.ROLE_NAME}','${data.DEPARTMENT_NAME}','${data.ROLE_DESCRIPTION}'`
         return await executeQuery(q);
     } 
     catch (err) {
