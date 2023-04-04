@@ -25,7 +25,7 @@ const addLeaveModel = async(data) =>{
 
 const editLeaveModel = async(data) =>{
     try {
-        let q=`EXECUTE SP_edit_leaves '${data.EMPLOYEE_ID}','${data.APPROVER_NAME}','${data.REASON_FOR_LEAVE}','${data.START_DATE}','${data.END_DATE}','${data.LEAVES_STATUS}'`
+        let q=`EXECUTE SP_edit_leaves '${data.LEAVE_REQUEST_ID}','${data.EMPLOYEE_NAME}','${data.APPROVER_NAME}','${data.REASON_FOR_LEAVE}','${data.START_DATE}','${data.END_DATE}','${data.LEAVES_STATUS}'`
         return await executeQuery(q)
     } catch (error) {
         throw new Error(error);
@@ -36,7 +36,7 @@ const editLeaveModel = async(data) =>{
 
 const deleteLeaveModel = async(data) =>{
     try {
-        let q=`EXECUTE SP_edit_leaves '${data.id}'`
+        let q=`EXECUTE SP_delete_leaves '${data.id}'`
         return await executeQuery(q)
     } catch (error) {
         throw new Error(error);
