@@ -32,9 +32,14 @@ const getallEmployeeDetailsServices = async () => {
         x['PANCARD_NUMBER'] = i.PANCARD_NUMBER;
         x['DOB'] = i.DOB;
         x['AADHAR_NUMBER'] = i.AADHAR_NUMBER;
+        x['DATE_OF_JOINING']=i.DATE_OF_JOINING;
+        x['LAST_WORKING_DAY']=i.LAST_WORKING_DAY;
         x['EMPLOYEE_NUMBER'] = i.EMPLOYEE_NUMBER;
         x['BLOOD_GROUP'] = i.BLOOD_GROUP;
-        x['ACTIVATION_STATUS'] = i.ACTIVATION_STATUS
+        x['ACTIVATION_STATUS'] = i.ACTIVATION_STATUS;
+        x['PROJECT_ID']=i.PROJECT_ID;
+        x['DEPT_ID']=i.DEPT_ID;
+        x['ROLE_ID']=i.ROLE_ID;
 
 
         //  address record 

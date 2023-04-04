@@ -1,10 +1,10 @@
 CREATE PROCEDURE SP_delete_department
 (
-    @id INT
+    @DEPT_ID INT
 )
 
 AS
 BEGIN
     DELETE FROM DEPARTMENT
-    WHERE DEPT_ID=@id
+    WHERE DEPT_ID=@DEPT_ID
 END
