@@ -1,4 +1,4 @@
-const {poolPromise}=require('../../database');
+const { executeQuery } = require('../models/executeQuery')
 
 const getTimesheetModel = async() =>{
     try {
@@ -19,17 +19,29 @@ const addTimeSheetDetailsModel=async(data)=>{
         throw new Error(err)  
     }
 }
-const executeQuery=async(query)=>{
-    try{
-        let pool=await poolPromise;
-        return await pool.query(query);
-    
-    }catch(err){
-        throw new Error(err);
+const editTimeSheetDetailsModel=async(data)=>{
+    try {
+        let q=`EXECUTE SP_edit_TimeSheet '${data.TIMESHEET_ID}','${data.EMPLOYEE_NAME}','${data.APPROVER_EMPLOYEE_NAME}','${data.PROJECT_NAME}','${data.TASK_DETAILS}','${data.START_DATE}','${data.END_DATE}','${data.APPROVER_STATUS}'`
+        return await executeQuery(q);
+    } 
+    catch (err) {
+        console.log(err)
+        throw new Error(err)  
+    }
+}
+const deletetimesheetModel = async (data) => {
+    try {
+        let q= `EXECUTE SP_delete_timesheet '${data.id}'`
+        return await executeQuery(q);
+    } catch (error) {
+        throw new Error(error)
     }
 }
 
+
 module.exports={
     getTimesheetModel,
-    addTimeSheetDetailsModel
+    addTimeSheetDetailsModel,
+    editTimeSheetDetailsModel,
+    deletetimesheetModel
 }

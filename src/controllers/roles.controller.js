@@ -1,4 +1,5 @@
 const roleServices=require('../services/roles.service');
+const { callService } = require('../controllers/callService');
 
 const getRoles = async(req,res) => {
     
@@ -9,24 +10,21 @@ const addroles=async(req,res)=>{
     callService(roleServices.addRoleServices,req,res)
 
 }
+const editroles=async(req,res)=>{
+    callService(roleServices.editRoleServices,req,res)
 
-const callService = async (method, req, res) => {
-    try {
-        var result = await method(req);
-        res.status(200).json({
-            status: result.status,
-            message: result.message,
-            data: result.data
-        })
-    } catch (err) {
-        res.status(400).json({
-            message: "Error"
-        })
-    }
 }
+const deleteroles=async(req,res)=>{
+    callService(roleServices.deleteRoleServices,req,res)
+
+}
+
+
 
 module.exports={
     getRoles,
     addroles,
+    editroles,
+    deleteroles,
     callService
 }

@@ -25,7 +25,35 @@ const addTimeSheetServices = async (req) => {
         
     }
 }
+
+const editTimeSheetServices = async (req) => {
+    try {
+        let data = req.body;
+        console.log(data)
+        await timesheetModel.editTimeSheetDetailsModel(data)
+
+        return { status: 200, message: "success", data: []}
+
+    } 
+    catch (error) {
+        console.log(error)
+         return { status: 400, message: "error", data: "something went wrong" }
+        
+    }
+}
+const deleteTimeSheetServices = async (req) =>{
+    try {
+  
+      let data = req.params;
+      let result = await timesheetModel.deletetimesheetModel(data);
+      return {status:200, message:"Successfully Deleted" ,data:[] }
+    } catch (error) {
+      return { status:400, message:"error", data:"Something Went Wrong" }
+    }
+  }
 module.exports={
     getTimeSheetServices,
-    addTimeSheetServices 
+    addTimeSheetServices,
+    editTimeSheetServices,
+    deleteTimeSheetServices 
 }

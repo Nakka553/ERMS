@@ -10,6 +10,28 @@ const getallEmployeeDetailsModel = async () => {
     }
 }
 
+const addAllEmployeeDetailsModel = async (data) => {
+    try {
+        console.log(data);
+        let q = `EXECUTE SP_add_allEmployeeDetails '${data.FIRST_NAME}','${data.MIDDLE_NAME}','${data.LAST_NAME}','${data.GENDER}',
+        '${data.CONTACT_NUMBER}','${data.EMAIL_ID}','${data.PANCARD_NUMBER}','${data.DOB}','${data.AADHAR_NUMBER}','${data.DATE_OF_JOINING}',
+        '${data.LAST_WORKING_DAY}','${data.EMPLOYEE_NUMBER}','${data.BLOOD_GROUP}','${data.ACTIVATION_STATUS}','${data.PERMANENT_ADDRESS}',
+        '${data.HOUSE_NO}','${data.STREET_NAME}','${data.CITY}','${data.DISTRICT}','${data.STATE}','${data.PINCODE}','${data.COUNTRY}',
+        '${data.TEMPORARY_ADDRESS}','${data.T_HOUSE_NO}','${data.T_STREET_NAME}','${data.T_CITY}','${data.T_DISTRICT}','${data.T_STATE}',
+        '${data.T_PINCODE}','${data.T_COUNTRY}','${data.TENTH}','${data.BOARD_NAME}','${data.PASSEDOUT_YEAR}','${data.PERCENTAGE}',
+        '${data.INTERMEDIATE}','${data.INTER_BOARD_NAME}','${data.INTER_PASSEDOUT_YEAR}','${data.INTER_PERCENTAGE}','${data.GRADUATION}',
+        '${data.UG_UNIVERSITY}','${data.UG_PASSEDOUT_YEAR}','${data.UG_PERCENTAGE}','${data.POST_GRADUTATION}','${data.PG_UNIVERSITY}',
+        '${data.PG_PASSEDOUT_YEAR}','${data.PG_PERCENTAGE}','${data.COMPANY_NAME}','${data.DESIGNATION}','${data.FROM_DATE}',
+        '${data.TO_DATE}','${data.DEPT_ID}','${data.PROJECT_ID}','${data.ROLE_ID}' `
+        
+        return await executeQuery(q);
+    }
+    catch (err) {
+        console.log(err)
+        throw new Error(err)
+    }
+}
+
 const editAllEmployeesDetailsModel = async (data) => {
     try {
 
@@ -71,10 +93,11 @@ const editAllEmployeesDetailsModel = async (data) => {
 
         return await executeQuery(q)
     } catch (error) {
-        console.log(error);
         throw new Error(error);
     }
 }
+
+
 
 const getEmployeeModel = async () => {
     try {
@@ -95,6 +118,7 @@ const getEmployeeModelAddress = async () => {
 
     }
 }
+
 const getEmployeeModelEducation = async () => {
     try {
         let q = `EXECUTE SP_get_employeeEducation`
@@ -104,6 +128,7 @@ const getEmployeeModelEducation = async () => {
 
     }
 }
+
 const getWorkExperienceModel = async () => {
     try {
         let q = `EXECUTE SP_get_employeeWorkExperience`
@@ -114,22 +139,6 @@ const getWorkExperienceModel = async () => {
     }
 }
 
-const addAllEmployeeDetailsModel = async (data) => {
-    try {
-        console.log(data);
-        let q = `EXECUTE SP_add_allEmployeeDetails '${data.FIRST_NAME}','${data.MIDDLE_NAME}','${data.LAST_NAME}','${data.GENDER}','${data.CONTACT_NUMBER}','${data.EMAIL_ID}','${data.PANCARD_NUMBER}','${data.DOB}','${data.AADHAR_NUMBER}','${data.DATE_OF_JOINING}','${data.LAST_WORKING_DAY}','${data.EMPLOYEE_NUMBER}','${data.BLOOD_GROUP}','${data.ACTIVATION_STATUS}','${data.PERMANENT_ADDRESS}','${data.HOUSE_NO}','${data.STREET_NAME}','${data.CITY}','${data.DISTRICT}','${data.STATE}','${data.PINCODE}','${data.COUNTRY}',
-        '${data.TEMPORARY_ADDRESS}','${data.T_HOUSE_NO}','${data.T_STREET_NAME}','${data.T_CITY}','${data.T_DISTRICT}','${data.T_STATE}',
-        '${data.T_PINCODE}','${data.T_COUNTRY}','${data.TENTH}','${data.BOARD_NAME}','${data.PASSEDOUT_YEAR}','${data.PERCENTAGE}',
-        '${data.INTERMEDIATE}','${data.INTER_BOARD_NAME}','${data.INTER_PASSEDOUT_YEAR}','${data.INTER_PERCENTAGE}','${data.GRADUATION}','${data.UG_UNIVERSITY}',
-        '${data.UG_PASSEDOUT_YEAR}','${data.UG_PERCENTAGE}','${data.POST_GRADUTATION}','${data.PG_UNIVERSITY}','${data.PG_PASSEDOUT_YEAR}','${data.PG_PERCENTAGE}',
-        '${data.COMPANY_NAME}','${data.DESIGNATION}','${data.FROM_DATE}','${data.TO_DATE}','${data.DEPT_ID}','${data.PROJECT_ID}','${data.ROLE_ID}' `
-        return await executeQuery(q);
-    }
-    catch (err) {
-        console.log(err)
-        throw new Error(err)
-    }
-}
 
 const checkEmployeeDetailsModel = async (data) => {
 
@@ -142,6 +151,7 @@ const checkEmployeeDetailsModel = async (data) => {
     }
 
 }
+
 const deleteAllEmployeeDetailsModel=async(data)=>{
     try {
         let q=`EXECUTE SP_delete_allEmployeesDetails '${data.id}'`
@@ -163,4 +173,7 @@ module.exports = {
     addAllEmployeeDetailsModel,
     deleteAllEmployeeDetailsModel
 }
+
+    
+
 

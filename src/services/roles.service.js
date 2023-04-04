@@ -26,7 +26,38 @@ const addRoleServices = async (req) => {
         
     }
 }
+const editRoleServices = async (req) => {
+    try {
+        let data = req.body;
+        console.log(data)
+        await roleModel.editRoleDetailsModel(data)
+
+        return { status: 200, message: "success", data: [] }
+
+    }
+    catch (error) {
+        console.log(error)
+         return { status: 400, message: "error", data: "something went wrong" }
+        
+    }
+}
+
+const deleteRoleServices = async (req) =>{
+    try {
+  
+      let data = req.params;
+      let result = await roleModel.deleteRolesModel(data);
+      return {status:200, message:"Successfully Deleted" ,data:[] }
+    } catch (error) {
+      return { status:400, message:"error", data:"Something Went Wrong" }
+    }
+  }
+
 module.exports={
     getRolesServices,
-    addRoleServices
+    addRoleServices,
+    editRoleServices,
+    deleteRoleServices
+    
+    
 }

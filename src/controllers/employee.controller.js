@@ -12,10 +12,14 @@ const getallEmployeeDetails = async (req, res) => {
 
 }
 
-const editAllEmployeesDetailsServices = async (req, res) => {
+const editAllEmployeesDetailsController = async (req, res) => {
 
     callService(employeeServices.editAllEmployeesDetailsServices, req, res)
 
+}
+const deleteAllEmployeesDetailsController = async(req, res)=>{
+
+    callService(employeeServices.deleteAllEmployeesDeatilsServices, req, res)
 }
 
 const getEmployeeAddress = async (req, res) => {
@@ -33,24 +37,22 @@ const getEmployeeEducation= async(req,res) => {
         callService(employeeServices.getWorkExperienceServices,req,res)
         
     }
+
     const addAllEmployeeDetails=async(req,res)=>{
         callService(employeeServices.addAllEmployeeServices,req,res)
     
     } 
-    const deleteAllEmployeeDetils=async(req,res)=>{
-        callService(employeeServices.deleteAllEmplpoyeeServices,req,res)
     
-    }
-
 module.exports = {
 
-    getEmployee,
+    
     getallEmployeeDetails,
-    editAllEmployeesDetailsServices,
+    editAllEmployeesDetailsController,
+    deleteAllEmployeesDetailsController,
+    getEmployee,
     getEmployeeAddress,
     getEmployeeEducation,
     getWorkExperience,
     addAllEmployeeDetails,
-    deleteAllEmployeeDetils,  
     callService
 }
