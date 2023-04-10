@@ -13,7 +13,7 @@ const getEmployeeServices = async () => {
 
 const getallEmployeeDetailsServices = async () => {
   try {
-    // let data = req.parais;
+    // let data = req.params;
     let result = await employeeModel.getallEmployeeDetailsModel();
 
     let finalArray = []

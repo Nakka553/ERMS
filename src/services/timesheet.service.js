@@ -10,6 +10,16 @@ const getTimeSheetServices = async (req) =>{
         
     }
 }
+
+const getDateTimeSheetServices = async (req) =>{
+    try {
+        let result=await timesheetModel.getDateTimesheetModel();
+        return {status:200,message:"success",data:result.recordsets[0]}
+    } catch (error) {
+    return{status:401,message:"error",data:"something went wrong"}
+        
+    }
+}
 const addTimeSheetServices = async (req) => {
     try {
         let data = req.body;
@@ -55,5 +65,16 @@ module.exports={
     getTimeSheetServices,
     addTimeSheetServices,
     editTimeSheetServices,
-    deleteTimeSheetServices 
+    deleteTimeSheetServices,
+    getDateTimeSheetServices 
 }
+
+
+
+
+
+
+
+
+
+

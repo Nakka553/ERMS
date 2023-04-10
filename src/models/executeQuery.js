@@ -11,3 +11,8 @@ const executeQuery=async(query)=>{
 }
 
 module.exports={executeQuery}
+
+
+
+
+
