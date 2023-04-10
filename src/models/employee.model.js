@@ -97,14 +97,7 @@ const editAllEmployeesDetailsModel = async (data) => {
     }
 }
 
-const deleteAllEmployeesModel = async (data) => {
-    try {
-        let q= `EXECUTE SP_delete_allEmployeesDetails '${data.id}'`
-        return await executeQuery(q);
-    } catch (error) {
-        throw new Error(error)
-    }
-}
+
 
 const getEmployeeModel = async () => {
     try {
@@ -159,6 +152,16 @@ const checkEmployeeDetailsModel = async (data) => {
 
 }
 
+const deleteAllEmployeeDetailsModel=async(data)=>{
+    try {
+        let q=`EXECUTE SP_delete_allEmployeesDetails '${data.id}'`
+        return await executeQuery(q);
+    } 
+    catch (err) {
+        console.log(err)
+        throw new Error(err)  
+    }
+}
 module.exports = {
     getallEmployeeDetailsModel,
     editAllEmployeesDetailsModel,
@@ -168,6 +171,9 @@ module.exports = {
     getWorkExperienceModel,
     checkEmployeeDetailsModel,
     addAllEmployeeDetailsModel,
-    deleteAllEmployeesModel
-    }
+    deleteAllEmployeeDetailsModel
+}
+
+    
+
 
