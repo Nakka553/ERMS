@@ -12,11 +12,7 @@ const getEmployeeServices = async () => {
 
 const getallEmployeeDetailsServices = async () => {
   try {
-<<<<<<< HEAD
     // let data = req.params;
-=======
-    
->>>>>>> 0c5840d68b749dd911282e6e62ebb2e3f3bb6551
     let result = await employeeModel.getallEmployeeDetailsModel();
 
     let finalArray = []
