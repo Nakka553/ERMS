@@ -31,7 +31,6 @@ const checkRoleDetailsModel = async (data) => {
     }
 
 }
-  
 
 const addRoleDetailsModel=async(data)=>{
     try {
@@ -43,6 +42,7 @@ const addRoleDetailsModel=async(data)=>{
         throw new Error(err)  
     }
 }
+
 const editRoleDetailsModel=async(data)=>{
 
     try {
