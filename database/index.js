@@ -20,6 +20,6 @@ const poolPromise = new sql.ConnectionPool(config)
     console.log('\x1b[33m%s\x1b[0m',`Connected to MSSQL`)
     return pool
   })
-  .catch((err) => console.log('Database Connection Failed! Bad Config: ', err))
+  .catch((err) => console.log('Database Connection Failed! Bad Config:', err))
 
 module.exports = {poolPromise}

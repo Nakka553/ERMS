@@ -58,7 +58,6 @@ module.exports={
     addTimeSheetDetailsModel,
     editTimeSheetDetailsModel,
     deletetimesheetModel,
-
     getParticularDatesrolesModel
 }
 
