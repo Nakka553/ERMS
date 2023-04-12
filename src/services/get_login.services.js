@@ -25,7 +25,7 @@ const LoginServices = async (req) => {
                         expiresIn: "1h",
                     }
                 );
-                return { status: 200, message: "Logged in Successfully", data: token }
+                return { status: 200, message: "Logged in Successfully", data: {token,username:data.username,EMPLOYEE_ID:result.recordset[0].EMPLOYEE_ID} }
             }
             return { status: 300, message: "Invalid password", data: [] }
         }
