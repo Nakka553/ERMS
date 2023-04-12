@@ -12,12 +12,25 @@ const { executeQuery } = require('../models/executeQuery')
 // }
 const getRolesModel = async (data) => {
     try {
-      let q = `EXECUTE SP_get_roles '${data.id}'`;
+      let q = `EXECUTE SP_get_roles`;
       return await executeQuery(q);
     } catch (error) {
       throw new Error(error);
     }
   };
+
+  
+const checkRoleDetailsModel = async (data) => {
+
+    try {
+        let q = ` SP_check_roleDetailsModel '${data.ROLE_NAME}'`
+        return await executeQuery(q);
+    } catch (error) {
+        console.log(err)
+        throw new Error(err)
+    }
+
+}
   
 
 const addRoleDetailsModel=async(data)=>{
@@ -56,6 +69,7 @@ module.exports={
     getRolesModel,
     addRoleDetailsModel,
     editRoleDetailsModel,
-    deleteRolesModel
+    deleteRolesModel,
+    checkRoleDetailsModel
    
 }
