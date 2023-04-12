@@ -1,11 +1,13 @@
 const  express  = require("express");
 const router = express.Router() ;
 const leaveController= require("../controllers/leave.controller")
+const  {verifyToken}  = require('../../express/auth');
 
-router.get('/getLeave',leaveController.getLeaveController);
-router.post('/addLeave',leaveController.addLeaveController);
-router.put('/editLeave',leaveController.editLeaveController);
-router.delete('/deleteLeave/:id',leaveController.deleteLeaveController);
+
+router.get('/getLeave',verifyToken,leaveController.getLeaveController);
+router.post('/addLeave',verifyToken,leaveController.addLeaveController);
+router.put('/editLeave',verifyToken,leaveController.editLeaveController);
+router.delete('/deleteLeave/:id',verifyToken,leaveController.deleteLeaveController);
 
 
 module.exports=router;
