@@ -1,0 +1,366 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Swagger SFN"
+    },
+    "host": "localhost:8000",
+    "basePath": "/dev/v1",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "securityDefinitions": {
+        "AuthTSuccessen": {
+            "type": "apiKey",
+            "name": "apikey",
+            "in": "header",
+            "description": "The apikey for authentication"
+        },
+        "bearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "The user token for authentication"
+        }
+    },
+    "security": [
+        {
+            "AuthTSuccessen": [],
+            "bearerAuth": []
+        }
+    ],
+    "paths": {    
+        "/getDepartment": {
+            "get": {
+                "tags": [
+                    "Department"
+                ],
+                "parameters": [
+                    {
+                        
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },    
+        "/addDepartment": {
+            "post": {
+                "tags": [
+                    "Department"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request param",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "DEPT_NAME": {
+                                    "type": "string"
+                                },
+                                "HOD": {
+                                    "type": "string"
+                                },
+                                "DEPT_EMAIL": {
+                                    "type": "string"
+                                },
+                                "DEPT_CONTACTNUMBER":{
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/editDepartment": {
+            "put": {
+                "tags": [
+                    "Department"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request param",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "DEPT_ID":{
+                                    "type":"number"
+                                },
+                                "DEPT_NAME": {
+                                    "type": "string"
+                                },
+                                "HOD": {
+                                    "type": "string"
+                                },
+                                "DEPT_EMAIL": {
+                                    "type": "string"
+                                },
+                                "DEPT_CONTACTNUMBER":{
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },  
+        "/deleteDepartment/{id}": {
+            "delete": {
+                "tags": [
+                    "Department"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "depare",
+                        "description": "Request param",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id":{
+                                    "type":"number"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        }, 
+
+        "/getProject": {
+            "get": {
+                "tags": [
+                    "project"
+                ],
+                "parameters": [
+                    {
+                        
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },   
+        "/addProject": {
+            "post": {
+                "tags": [
+                    "project"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request param",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "PROJECT_NAME": {
+                                    "type": "string"
+                                },
+                                "START_DATE": {
+                                    "type": "date"
+                                },
+                                "END_DATE": {
+                                    "type": "date"
+                                },
+                                "PROJECT_MANAGER":{
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/editProject": {
+            "put": {
+                "tags": [
+                    "project"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request param",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "PROJECT_ID":{
+                                    "type":"number"
+                                },
+                                "PROJECT_NAME": {
+                                    "type": "string"
+                                },
+                                "START_DATE": {
+                                    "type": "date"
+                                },
+                                "END_DATE": {
+                                    "type": "date"
+                                },
+                                "PROJECT_MANAGER":{
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        }, 
+        "/deleteProject/{id}": {
+            "delete": {
+                "tags": [
+                    "project"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Request param",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id":{
+                                    "type":"number"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+
+        "/login": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Request param",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "username":{
+                                        "type":"string"
+                                },
+                                "password":{
+                                    "type":"string"
+                            }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/getallemployeeDetails": {
+            "get": {
+                "tags": [
+                    "employee"
+                ],
+                "parameters": [
+                    {
+                        
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Error"
+                    }
+                }
+            }
+        }
+
+       }
+        
+       
+    
+}

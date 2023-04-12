@@ -6,6 +6,7 @@ const getTimesheet = async(req,res) => {
     callService(timesheetServices.getTimeSheetServices,req,res)
     
 }
+
 const addTimeSheet=async(req,res)=>{
     callService(timesheetServices.addTimeSheetServices,req,res)
 
@@ -20,10 +21,15 @@ const deleteTimeSheet=async(req,res)=>{
 
 }
 
+const getParticularDatestimesheet=async(req,res)=>{
+    callService(timesheetServices.getParticularDatestimesheetServices,req,res)
+
+}
 
 module.exports={
     getTimesheet,
     addTimeSheet,
     editTimeSheet,
-    deleteTimeSheet
+    deleteTimeSheet,
+    getParticularDatestimesheet
 }

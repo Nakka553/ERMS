@@ -1,7 +1,7 @@
 ALTER PROCEDURE SP_delete_project
 (
     @PROJECT_ID INT
-)
+) 
 
 AS
 BEGIN

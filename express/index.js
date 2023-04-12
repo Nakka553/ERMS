@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const { endpoint, jwtKey } = require('../config');
 const { poolPromise } = require('../database');
+const swaggerUi = require("swagger-ui-express");
+const swagger = require('../swagger.json')
 
 const employeeRouter = require("../src/routers/employee.router");
 const rolesRouter = require("../src/routers/roles.routers");
@@ -15,6 +17,7 @@ const loginController =require("../src/routers/get_login.router");
 module.exports = () => {
   poolPromise;
   const app = express();
+  app.use("/docs", swaggerUi.serve, swaggerUi.setup(swagger));
   app.use(cors())
   app.use(bodyParser.urlencoded({extended:false}))
   app.use(bodyParser.json())
@@ -27,6 +30,22 @@ module.exports = () => {
     }
   })
 
+  app.use((req, res, next) => {
+    if (req.headers.apikey || req.query.apikey) {
+      if (req.headers.apikey == process.env.API_KEY || req.query.apikey == process.env.API_KEY) {
+        return next();
+      } else {
+        return res.status(401).json({
+          message: "Invalid apikey"
+        })
+      }
+    } else {
+      return res.status(401).json({
+        message: "Required apikey"
+      })
+    }
+  })
+  
   app.use(endpoint, rolesRouter);
   app.use(endpoint, timesheetRouter);
   

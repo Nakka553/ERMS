@@ -1,6 +1,7 @@
 const  express  = require("express");
 const router = express.Router() ;
 const departmentController= require("../controllers/department.controller")
+
 const {verifyToken}=require('../../express/auth')
 
 router.get('/getDepartment',verifyToken,departmentController.getDepartmentController);

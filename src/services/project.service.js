@@ -48,5 +48,6 @@ const deleteProjectServices = async (req) =>{
 module.exports={
     getProjectServices,
     addProjectServices,
-    editProjectServices,deleteProjectServices
+    editProjectServices,
+    deleteProjectServices
 }

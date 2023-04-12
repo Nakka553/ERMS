@@ -9,4 +9,11 @@ router.post('/addTimeSheet',verifyToken,timesheet.addTimeSheet);
 router.put('/editTimeSheet',verifyToken,timesheet.editTimeSheet);
 router.delete('/deletetimesheet/:id',verifyToken,timesheet.deleteTimeSheet)
 
+
+router.get('/gettimesheetforParticularDates',timesheet.getParticularDatestimesheet);
+
+
 module.exports=router;
+
+
+
