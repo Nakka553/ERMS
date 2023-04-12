@@ -11,15 +11,7 @@ const getTimeSheetServices = async (req) =>{
     }
 }
 
-const getDateTimeSheetServices = async (req) =>{
-    try {
-        let result=await timesheetModel.getDateTimesheetModel();
-        return {status:200,message:"success",data:result.recordsets[0]}
-    } catch (error) {
-    return{status:401,message:"error",data:"something went wrong"}
-        
-    }
-}
+
 const addTimeSheetServices = async (req) => {
     try {
         let data = req.body;
@@ -61,12 +53,35 @@ const deleteTimeSheetServices = async (req) =>{
       return { status:400, message:"error", data:"Something Went Wrong" }
     }
   }
+
+  const  getParticularDatestimesheetServices = async (req) => {
+    try {
+        let data = req.body;
+        let ans = []
+        for(let i = 0;i< (data.STARTDATE).length;i++){
+            const result =  await timesheetModel.getParticularDatesrolesModel(data.EMPLOYEE_ID,data.STARTDATE[i])
+            ans.push(result.recordset)
+        }
+
+        console.log(ans);
+
+        return { status: 200, message: "success", data: ans }
+
+    }
+    catch (error) {
+        console.log(error)
+         return { status: 400, message: "error", data: "something went wrong" }
+        
+    }
+}
+
 module.exports={
     getTimeSheetServices,
     addTimeSheetServices,
     editTimeSheetServices,
     deleteTimeSheetServices,
-    getDateTimeSheetServices 
+    
+    getParticularDatestimesheetServices
 }
 
 

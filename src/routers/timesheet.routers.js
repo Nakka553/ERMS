@@ -8,7 +8,7 @@ router.get('/getTimesheet',verifyToken,timesheet.getTimesheet);
 router.post('/addTimeSheet',verifyToken,timesheet.addTimeSheet);
 router.put('/editTimeSheet',verifyToken,timesheet.editTimeSheet);
 router.delete('/deletetimesheet/:id',verifyToken,timesheet.deleteTimeSheet)
-router.get('/getDateTimeSheet',verifyToken,timesheet.getDateTimesheet);
+router.get('/gettimesheetforParticularDates',timesheet.getParticularDatestimesheet);
 
 module.exports=router;
 
