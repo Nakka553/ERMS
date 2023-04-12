@@ -44,8 +44,6 @@ const getEmployeeEducation= async(req,res) => {
     } 
     
 module.exports = {
-
-    
     getallEmployeeDetails,
     editAllEmployeesDetailsController,
     deleteAllEmployeesDetailsController,

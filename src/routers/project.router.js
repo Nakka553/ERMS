@@ -1,11 +1,12 @@
 const  express  = require("express");
 const router = express.Router() ;
 const projectController= require("../controllers/project.controller");
+const  {verifyToken}  = require('../../express/auth');
 
-router.get('/getProject',projectController.getProjectController);
-router.post('/addProject',projectController.addProjectController);
-router.put('/editProject',projectController.editProjectController);
-router.delete('/deleteProject/:id',projectController.deleteProjectController);
+router.get('/getProject',verifyToken,projectController.getProjectController);
+router.post('/addProject',verifyToken,projectController.addProjectController);
+router.put('/editProject',verifyToken,projectController.editProjectController);
+router.delete('/deleteProject/:id',verifyToken,projectController.deleteProjectController);
 
 
 

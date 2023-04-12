@@ -37,7 +37,8 @@ const deleteDepartmentServices = async (req) =>{
         let data = req.params;
         let result=await departmentModel.deleteDepartmentModel(data);
         return {status:200,message:"success",data:[]}
-    } catch (error) {
+    } 
+    catch (error) {
     return{status:401,message:"error",data:"something went wrong"}   
     }
 }

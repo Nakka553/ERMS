@@ -122,7 +122,8 @@ const getEmployeeServicesEducation = async () => {
     // let data = req.parais;
     let result = await employeeModel.getEmployeeModelEducation();
     return { status: 200, message: "success", data: result.recordsets }
-  } catch (error) {
+  }
+   catch (error) {
     return { status: 401, message: "error", data: "something went wrong" }
 
   }
@@ -131,6 +132,7 @@ const addAllEmployeeServices = async (req) => {
   try {
     let data = req.body;
     let result = await employeeModel.checkEmployeeDetailsModel(data);
+    
     if (result?.recordset?.length > 0) {
       return { status: 300, message: "Employee Already existed", data: [] }
     }

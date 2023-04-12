@@ -4,5 +4,6 @@ ALTER PROCEDURE SP_get_login(
 AS
 BEGIN
 	select * from [User] u where USERNAME =@username
+	
 END
 

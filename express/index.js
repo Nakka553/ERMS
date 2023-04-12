@@ -7,9 +7,6 @@ const { poolPromise } = require('../database');
 const employeeRouter = require("../src/routers/employee.router");
 const rolesRouter = require("../src/routers/roles.routers");
 const timesheetRouter = require("../src/routers/timesheet.routers");
-
-
-
 const leaveRouter = require("../src/routers/leave.router");
 const projectRouter = require("../src/routers/project.router");
 const departmentRouter = require("../src/routers/department.router");
