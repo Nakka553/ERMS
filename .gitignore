@@ -1,2 +1,28 @@
 .env
 node_modules/
+
+---------------------------login with registered user role based--------------------------
+
+router.post("/login", async (req, res) => {
+    const { password, email } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if(!user) return res.render("login", { message: "User doesn't exist" });
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if(!isMatch) return res.render("login", { message: "Invalid Credential" });
+        const payload = {
+            user: {id: user.id, role: user.role}
+        }
+        const token = jwt.sign(payload, JWT_SECRET);
+        // console.log(token);
+        res.cookie('token', token, {
+            expires: new Date(Date.now() + 8 * 3600000), // cookie will be removed after 8 hours
+            httpOnly: true
+          });
+        res.redirect("/");
+    } catch (err) {
+        console.log(err);
+        res.render("login", { message: err.message });
+    }
+});
