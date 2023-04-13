@@ -13,6 +13,8 @@ const leaveRouter = require("../src/routers/leave.router");
 const projectRouter = require("../src/routers/project.router");
 const departmentRouter = require("../src/routers/department.router");
 const loginController =require("../src/routers/get_login.router");
+const permission =require("../src/routers/permission.router");
+
 
 module.exports = () => {
   poolPromise;
@@ -48,14 +50,12 @@ module.exports = () => {
   
   app.use(endpoint, rolesRouter);
   app.use(endpoint, timesheetRouter);
-  
-  
   app.use(endpoint, employeeRouter);
-  
   app.use(endpoint, leaveRouter);
   app.use(endpoint, projectRouter);
   app.use(endpoint, departmentRouter);
   app.use(endpoint, loginController);
+  app.use(endpoint, permission);
   
   
 

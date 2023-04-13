@@ -1,5 +1,3 @@
-
-
 const { executeQuery } = require('../models/executeQuery')
 
 

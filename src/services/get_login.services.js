@@ -1,17 +1,12 @@
-const { login, loginDetailsModel } = require("../models/get_login.model");
+const {  loginDetailsModel } = require("../models/get_login.model");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const LoginServices = async (req) => {
     try {
         let data = req.body;
-        let result;
-        if (data.username.toLocaleLowerCase() == 'admin')
-            result = await login(data)
-        else {
-            result = await loginDetailsModel(data)
-        }
-    
+        let result = await loginDetailsModel(data)
+      
         if (data.username == result.recordset[0].USERNAME) {
             const hashedPassword = result.recordset[0].PASSWORD;
     
@@ -25,7 +20,7 @@ const LoginServices = async (req) => {
                         expiresIn: "1h",
                     }
                 );
-                return { status: 200, message: "Logged in Successfully", data: {token,username:data.username,EMPLOYEE_ID:result.recordset[0].EMPLOYEE_ID} }
+                return { status: 200, message: "Logged in Successfully", data: {token,ROLE_NAME:result.recordset[0].ROLE_NAME,ROLE_ID:result.recordset[0].ROLE_ID,username:data.username,EMPLOYEE_ID:result.recordset[0].EMPLOYEE_ID} }
             }
             return { status: 300, message: "Invalid password", data: [] }
         }
