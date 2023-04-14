@@ -4,7 +4,7 @@ const timesheet=require('../controllers/timesheet.controller');
 const  {verifyToken}  = require('../../express/auth');
 
 
-router.get('/getTimesheet',verifyToken,timesheet.getTimesheet);
+router.post('/getTimesheet',verifyToken,timesheet.getTimesheet);
 router.post('/postTimesheetForEmployee',verifyToken,timesheet.getTimesheetForEmployee);
 router.post('/addTimeSheet',verifyToken,timesheet.addTimeSheet);
 router.put('/editTimeSheet',verifyToken,timesheet.editTimeSheet);
