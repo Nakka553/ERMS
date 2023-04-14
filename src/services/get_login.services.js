@@ -9,7 +9,6 @@ const LoginServices = async (req) => {
       
         if (data.username == result.recordset[0].USERNAME) {
             const hashedPassword = result.recordset[0].PASSWORD;
-    
             if (await bcrypt.compare(data.password, hashedPassword)) {  
                 
                 // Create token
