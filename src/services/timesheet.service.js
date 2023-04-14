@@ -3,9 +3,13 @@ const timesheetModel=require('../models/timesheet.model');
 
 const getTimeSheetServices = async (req) =>{
     try {
-        let result=await timesheetModel.getTimesheetModel();
+        let data=req.body
+        console.log(data);
+        let result=await timesheetModel.getTimesheetModel(data.APPROVER_EMPLOYEE_ID);
+        console.log(result.recordset);
         return {status:200,message:"success",data:result.recordsets[0]}
     } catch (error) {
+        console.log(error);
     return{status:401,message:"error",data:"something went wrong"}
         
     }
@@ -43,6 +47,21 @@ const editTimeSheetServices = async (req) => {
         
     }
 }
+
+const getTimesheetStatusServices = async (req) =>{
+    try {
+        let data = req.body
+        let result=await getTimesheetStatusModel(data);
+        
+        return {status:200,message:"success",data:result.recordsets[0]}
+
+    } catch (error) {
+        
+    return{status:401,message:"error",data:"something went wrong"}
+        
+    }
+}
+
 const deleteTimeSheetServices = async (req) =>{
     try {
   
@@ -80,7 +99,7 @@ module.exports={
     addTimeSheetServices,
     editTimeSheetServices,
     deleteTimeSheetServices,
-    
+    getTimesheetStatusServices,
     getParticularDatestimesheetServices
 }
 

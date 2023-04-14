@@ -15,7 +15,6 @@ const departmentRouter = require("../src/routers/department.router");
 const loginController =require("../src/routers/get_login.router");
 const permission =require("../src/routers/permission.router");
 
-
 module.exports = () => {
   poolPromise;
   const app = express();
@@ -57,7 +56,5 @@ module.exports = () => {
   app.use(endpoint, loginController);
   app.use(endpoint, permission);
   
-  
-
   return app;
 }
