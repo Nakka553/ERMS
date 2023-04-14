@@ -41,11 +41,20 @@ const deleteLeaveModel = async(data) =>{
         
     }
 }
-
+const getLeaveforEmployeeIDModel = async(EMPLOYEE_ID) =>{
+    try {
+        let q=`EXECUTE SP_get_leavesForEmployeeID '${EMPLOYEE_ID}'` 
+        return await executeQuery(q)
+    } catch (error) {
+        throw new Error(err);
+        
+    }
+}
 
 module.exports={
     getLeaveModel,
     addLeaveModel,
     editLeaveModel,
-    deleteLeaveModel
+    deleteLeaveModel,
+    getLeaveforEmployeeIDModel
 }
