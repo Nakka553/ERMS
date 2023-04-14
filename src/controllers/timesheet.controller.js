@@ -8,7 +8,7 @@ const getTimesheet = async(req,res) => {
 }
 const getTimesheetStatusController = async (req, res) => {
 
-    callService(getTimesheetStatusServices, req, res)
+    callService(timesheetServices.getTimesheetStatusServices, req, res)
 
 }
 const addTimeSheet=async(req,res)=>{

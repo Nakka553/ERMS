@@ -51,7 +51,7 @@ const editTimeSheetServices = async (req) => {
 const getTimesheetStatusServices = async (req) =>{
     try {
         let data = req.body
-        let result=await getTimesheetStatusModel(data);
+        let result=await timesheetModel.getTimesheetStatusModel(data);
         
         return {status:200,message:"success",data:result.recordsets[0]}
 
