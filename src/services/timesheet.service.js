@@ -5,7 +5,20 @@ const getTimeSheetServices = async (req) =>{
     try {
         let data=req.body
         console.log(data);
-        let result=await timesheetModel.getTimesheetModel(data.APPROVER_EMPLOYEE_ID);
+        let result=await timesheetModel.getTimesheetModel(data.EMPLOYEE_ID);
+        console.log(result.recordset);
+        return {status:200,message:"success",data:result.recordsets[0]}
+    } catch (error) {
+        console.log(error);
+    return{status:401,message:"error",data:"something went wrong"}
+        
+    }
+}
+const getTimesheetForEmployeeServices = async (req) =>{
+    try {
+        let data=req.body
+        console.log(data);
+        let result=await timesheetModel.getTimesheetForEmployeeModel(data.EMPLOYEE_ID);
         console.log(result.recordset);
         return {status:200,message:"success",data:result.recordsets[0]}
     } catch (error) {
@@ -100,7 +113,8 @@ module.exports={
     editTimeSheetServices,
     deleteTimeSheetServices,
     getTimesheetStatusServices,
-    getParticularDatestimesheetServices
+    getParticularDatestimesheetServices,
+    getTimesheetForEmployeeServices
 }
 
 

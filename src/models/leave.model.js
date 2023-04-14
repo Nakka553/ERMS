@@ -1,9 +1,9 @@
 const { executeQuery } = require('../models/executeQuery')
 
 
-const getLeaveModel = async(APPROVER_EMPLOYEE_ID) =>{
+const getLeaveModel = async(EMPLOYEE_ID) =>{
     try {
-        let q=`EXECUTE SP_getLeave '${APPROVER_EMPLOYEE_ID}'` 
+        let q=`EXECUTE SP_get_Approved_leaves '${EMPLOYEE_ID}'` 
         return await executeQuery(q)
     } catch (error) {
         throw new Error(err);

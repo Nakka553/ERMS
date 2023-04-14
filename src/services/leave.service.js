@@ -4,7 +4,7 @@ const leaveModel=require('../models/leave.model');
 const getLeaveServices = async (req) =>{
     try {
          let data = req.body;
-        let result=await leaveModel.getLeaveModel(data.APPROVER_EMPLOYEE_ID);
+        let result=await leaveModel.getLeaveModel(data.EMPLOYEE_ID);
         return {status:200,message:"success",data:result.recordsets[0]}
 
     } catch (error) {

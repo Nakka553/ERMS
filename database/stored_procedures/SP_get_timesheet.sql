@@ -1,7 +1,8 @@
-CREATE procedure SP_get_TimeSheet
-    
+ALTER procedure SP_get_TimeSheet
+   @EMPLOYEE_ID INT 
 AS
 BEGIN
-    SELECT * from TIMESHEET ;
+    SELECT * from TIMESHEET
+    WHERE EMPLOYEE_ID=@EMPLOYEE_ID
 
 END
