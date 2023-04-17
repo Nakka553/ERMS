@@ -1,14 +1,19 @@
 const timesheetServices=require('../services/timesheet.service');
 const {callService} = require("../controllers/callService");
 
-const getTimesheet = async(req,res) => {
+const addApproverTimesheet = async(req,res) => {
    
-    callService(timesheetServices.getTimeSheetServices,req,res)
+    callService(timesheetServices.addApproverTimesheetServices,req,res)
+    
+}
+const  addTimesheetForEmployee = async(req,res) => {
+   
+    callService(timesheetServices.addTimesheetForEmployeeServices,req,res)
     
 }
 const getTimesheetStatusController = async (req, res) => {
 
-    callService(getTimesheetStatusServices, req, res)
+    callService(timesheetServices.getTimesheetStatusServices, req, res)
 
 }
 const addTimeSheet=async(req,res)=>{
@@ -31,10 +36,11 @@ const getParticularDatestimesheet=async(req,res)=>{
 }
 
 module.exports={
-    getTimesheet,
+    addApproverTimesheet,
     addTimeSheet,
     editTimeSheet,
     deleteTimeSheet,
     getTimesheetStatusController,
-    getParticularDatestimesheet
+    getParticularDatestimesheet,
+    addTimesheetForEmployee
 }

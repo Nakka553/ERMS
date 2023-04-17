@@ -4,10 +4,12 @@ const timesheet=require('../controllers/timesheet.controller');
 const  {verifyToken}  = require('../../express/auth');
 
 
-router.get('/getTimesheet',verifyToken,timesheet.getTimesheet);
+router.post('/addApproverTimesheet',verifyToken,timesheet.addApproverTimesheet);
+router.post('/addTimesheetForEmployee',verifyToken,timesheet.addTimesheetForEmployee);
 router.post('/addTimeSheet',verifyToken,timesheet.addTimeSheet);
 router.put('/editTimeSheet',verifyToken,timesheet.editTimeSheet);
-router.delete('/deletetimesheet/:id',verifyToken,timesheet.deleteTimeSheet)
+router.delete('/deletetimesheet/:id',verifyToken,timesheet.deleteTimeSheet);
+router.get('/getTimesheetStatus',verifyToken,timesheet.getTimesheetStatusController);
 router.get('/gettimesheetforParticularDates',verifyToken,timesheet.getParticularDatestimesheet);
 
 

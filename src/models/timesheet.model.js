@@ -1,8 +1,8 @@
 const { executeQuery } = require('../models/executeQuery')
 
-const getTimesheetModel = async(APPROVER_EMPLOYEE_ID) =>{
+const addApproverTimesheetModel = async(EMPLOYEE_ID) =>{
     try {
-        let q=`EXECUTE SP_get_TimeSheet '${APPROVER_EMPLOYEE_ID}'`
+        let q=`EXECUTE SP_get_Approved_timesheet '${EMPLOYEE_ID}'`
         return await executeQuery(q)
     } catch (err) {
         throw new Error(err);
@@ -10,6 +10,15 @@ const getTimesheetModel = async(APPROVER_EMPLOYEE_ID) =>{
     }
 }
 
+const addTimesheetForEmployeeModel = async(EMPLOYEE_ID) =>{
+    try {
+        let q=`EXECUTE SP_get_TimeSheet '${EMPLOYEE_ID}'`
+        return await executeQuery(q)
+    } catch (err) {
+        throw new Error(err);
+        
+    }
+}
 const addTimeSheetDetailsModel=async(data)=>{
     try {
         let q=`EXECUTE SP_add_TimeSheet '${data.EMPLOYEE_NAME}','${data.APPROVER_EMPLOYEE_NAME}','${data.PROJECT_NAME}','${data.TASK_DETAILS}','${data.START_DATE}','${data.END_DATE}','${data.APPROVER_STATUS}'`
@@ -64,12 +73,13 @@ const getParticularDatesrolesModel=async(EMPLOYEE_ID,STARTDATE)=>{
 }
 
 module.exports={
-    getTimesheetModel,
+    addApproverTimesheetModel,
     addTimeSheetDetailsModel,
     editTimeSheetDetailsModel,
     deletetimesheetModel,
     getTimesheetStatusModel,
-    getParticularDatesrolesModel
+    getParticularDatesrolesModel,
+    addTimesheetForEmployeeModel
 }
 
 
