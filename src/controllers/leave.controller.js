@@ -1,9 +1,9 @@
 const leaveServices = require('../services/leave.service');
 const {callService} = require("../controllers/callService")
 
-const getLeaveController = async(req,res)=>{
+const addApproverLeaveController = async(req,res)=>{
    
-    callService(leaveServices.getLeaveServices,req,res);
+    callService(leaveServices.addApproverLeaveServices,req,res);
 }
 
 const addLeaveController = async(req,res)=>{
@@ -18,15 +18,15 @@ const editLeaveController = async(req,res)=>{
 const deleteLeaveController = async(req,res)=>{
     callService(leaveServices.deleteLeaveServices,req,res);
 }
-const  getLeaveforEmployeeIDController = async(req,res)=>{
+const addLeaveforEmployeeIDController = async(req,res)=>{
    
-    callService(leaveServices.getLeaveforEmployeeIDServices,req,res);
+    callService(leaveServices.addLeaveforEmployeeIDServices,req,res);
 }
 
 module.exports={
-    getLeaveController,
+    addApproverLeaveController,
     addLeaveController,
     editLeaveController,
     deleteLeaveController,
-    getLeaveforEmployeeIDController
+    addLeaveforEmployeeIDController
 };

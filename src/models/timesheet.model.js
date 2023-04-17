@@ -1,6 +1,6 @@
 const { executeQuery } = require('../models/executeQuery')
 
-const getTimesheetModel = async(EMPLOYEE_ID) =>{
+const addApproverTimesheetModel = async(EMPLOYEE_ID) =>{
     try {
         let q=`EXECUTE SP_get_Approved_timesheet '${EMPLOYEE_ID}'`
         return await executeQuery(q)
@@ -10,7 +10,7 @@ const getTimesheetModel = async(EMPLOYEE_ID) =>{
     }
 }
 
-const getTimesheetForEmployeeModel = async(EMPLOYEE_ID) =>{
+const addTimesheetForEmployeeModel = async(EMPLOYEE_ID) =>{
     try {
         let q=`EXECUTE SP_get_TimeSheet '${EMPLOYEE_ID}'`
         return await executeQuery(q)
@@ -73,13 +73,13 @@ const getParticularDatesrolesModel=async(EMPLOYEE_ID,STARTDATE)=>{
 }
 
 module.exports={
-    getTimesheetModel,
+    addApproverTimesheetModel,
     addTimeSheetDetailsModel,
     editTimeSheetDetailsModel,
     deletetimesheetModel,
     getTimesheetStatusModel,
     getParticularDatesrolesModel,
-    getTimesheetForEmployeeModel
+    addTimesheetForEmployeeModel
 }
 
 

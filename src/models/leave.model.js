@@ -1,7 +1,7 @@
 const { executeQuery } = require('../models/executeQuery')
 
 
-const getLeaveModel = async(EMPLOYEE_ID) =>{
+const addApproverLeaveModel = async(EMPLOYEE_ID) =>{
     try {
         let q=`EXECUTE SP_get_Approved_leaves '${EMPLOYEE_ID}'` 
         return await executeQuery(q)
@@ -41,9 +41,9 @@ const deleteLeaveModel = async(data) =>{
         
     }
 }
-const getLeaveforEmployeeIDModel = async(EMPLOYEE_ID) =>{
+const addLeaveforEmployeeIDModel = async(data) =>{
     try {
-        let q=`EXECUTE SP_get_leavesForEmployeeID '${EMPLOYEE_ID}'` 
+        let q=`EXECUTE SP_get_leavesForEmployeeID '${data.EMPLOYEE_ID}'` 
         return await executeQuery(q)
     } catch (error) {
         throw new Error(err);
@@ -52,9 +52,9 @@ const getLeaveforEmployeeIDModel = async(EMPLOYEE_ID) =>{
 }
 
 module.exports={
-    getLeaveModel,
+    addApproverLeaveModel,
     addLeaveModel,
     editLeaveModel,
     deleteLeaveModel,
-    getLeaveforEmployeeIDModel
+    addLeaveforEmployeeIDModel
 }
