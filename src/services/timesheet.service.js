@@ -1,11 +1,11 @@
 const timesheetModel=require('../models/timesheet.model');
 
 
-const addApproverTimesheetServices = async (req) =>{
+const getApproverTimesheetServices = async (req) =>{
     try {
         let data=req.body
        
-        let result=await timesheetModel.addApproverTimesheetModel(data.EMPLOYEE_ID);
+        let result=await timesheetModel.getApproverTimesheetModel(data.EMPLOYEE_ID);
        
         return {status:200,message:"success",data:result.recordsets[0]}
     } catch (error) {
@@ -14,19 +14,7 @@ const addApproverTimesheetServices = async (req) =>{
         
     }
 }
-const addTimesheetForEmployeeServices = async (req) =>{
-    try {
-        let data=req.body
-       
-        let result=await timesheetModel.addTimesheetForEmployeeModel(data.EMPLOYEE_ID);
-       
-        return {status:200,message:"success",data:result.recordsets[0]}
-    } catch (error) {
-       
-    return{status:401,message:"error",data:"something went wrong"}
-        
-    }
-}
+
 
 
 const addTimeSheetServices = async (req) => {
@@ -108,7 +96,7 @@ const deleteTimeSheetServices = async (req) =>{
 }
 
 module.exports={
-    addApproverTimesheetServices,
+    getApproverTimesheetServices,
     addTimeSheetServices,
     editTimeSheetServices,
     deleteTimeSheetServices,
