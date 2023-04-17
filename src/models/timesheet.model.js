@@ -43,7 +43,7 @@ const deletetimesheetModel = async (data) => {
 
 const getTimesheetStatusModel = async(data) =>{
     try {
-        let q=`EXECUTE SP_get_timesheetStatus '${data.EMPLOYEE_ID}','${data.APPROVER_STATUS}','${data.TIMESHEET_ID}'`
+        let q=`EXECUTE SP_get_timesheetStatus '${data.TIMESHEET_ID}','${data.EMPLOYEE_ID}','${data.APPROVER_STATUS}'`
         return await executeQuery(q)
     } catch (error) {
         throw new Error(err);
