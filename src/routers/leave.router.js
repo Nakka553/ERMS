@@ -8,5 +8,8 @@ router.post('/getLeaves',verifyToken,leaveController.getApproverLeaveController)
 router.post('/addLeaves',verifyToken,leaveController.addLeaveController);
 router.put('/editLeaves',verifyToken,leaveController.editLeaveController);
 router.delete('/deleteLeave/:id',verifyToken,leaveController.deleteLeaveController);
+router.put('/getLeavesStatus',verifyToken,leaveController.getLeavesStatusController);
+
+
 
 module.exports=router;

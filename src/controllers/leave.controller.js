@@ -23,10 +23,17 @@ const addLeaveforEmployeeIDController = async(req,res)=>{
     callService(leaveServices.addLeaveforEmployeeIDServices,req,res);
 }
 
+
+const getLeavesStatusController = async (req, res) => {
+
+    callService(leaveServices.getLeavesStatusServices, req, res)
+
+}
 module.exports={
     getApproverLeaveController,
     addLeaveController,
     editLeaveController,
     deleteLeaveController,
+    getLeavesStatusController,
     addLeaveforEmployeeIDController
 };

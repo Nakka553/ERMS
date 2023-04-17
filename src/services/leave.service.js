@@ -49,6 +49,21 @@ const deleteLeaveServices = async (req) =>{
         
     }
 }
+
+const getLeavesStatusServices = async (req) =>{
+    try {
+        let data = req.body
+        let result=await leaveModel.getLeavesStatusModel(data);
+        
+        return {status:200,message:"success",data:result.recordsets[0]}
+
+    } catch (error) {
+        
+    return{status:401,message:"error",data:"something went wrong"}
+        
+    }
+}
+
 const addLeaveforEmployeeIDServices = async (req) =>{
     try {
          let data = req.body;
@@ -67,5 +82,6 @@ module.exports={
     addLeaveServices,
     editLeaveServices,
     deleteLeaveServices,
+    getLeavesStatusServices,
     addLeaveforEmployeeIDServices
 }

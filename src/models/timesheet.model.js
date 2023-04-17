@@ -10,7 +10,6 @@ const getApproverTimesheetModel = async(EMPLOYEE_ID) =>{
     }
 }
 
-
 const addTimeSheetDetailsModel=async(data)=>{
     try {
         let q=`EXECUTE SP_add_TimeSheet '${data.EMPLOYEE_ID}','${data.EMPLOYEE_NAME}','${data.APPROVER_EMPLOYEE_NAME}','${data.PROJECT_NAME}','${data.TASK_DETAILS}','${data.START_DATE}','${data.END_DATE}','${data.APPROVER_STATUS}'`

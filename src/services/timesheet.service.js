@@ -101,8 +101,7 @@ module.exports={
     editTimeSheetServices,
     deleteTimeSheetServices,
     getTimesheetStatusServices,
-    getParticularDatestimesheetServices,
-    addTimesheetForEmployeeServices
+    getParticularDatestimesheetServices
 }
 
 
