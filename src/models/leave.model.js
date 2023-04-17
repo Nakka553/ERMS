@@ -44,7 +44,7 @@ const deleteLeaveModel = async(data) =>{
 
 const getLeavesStatusModel = async(data) =>{
     try {
-        let q=`EXECUTE SP_get_leavesStatus '${data.EMPLOYEE_ID}','${data.LEAVES_STATUS}','${data.LEAVE_REQUEST_ID}'`
+        let q=`EXECUTE SP_get_leavesStatus '${data.LEAVE_REQUEST_ID}','${data.EMPLOYEE_ID}','${data.LEAVES_STATUS}'`
         return await executeQuery(q)
     } catch (error) {
         throw new Error(err);

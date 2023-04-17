@@ -28,7 +28,7 @@ const LoginServices = async (req) => {
         }
     }
     catch (error) {
-        console.log(error)
+        // console.log(error)
         return { status: 400, message: "Error", data: error }
     }
 
