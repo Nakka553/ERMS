@@ -3,8 +3,9 @@ const router=express.Router();
 const timesheet=require('../controllers/timesheet.controller');
 const  {verifyToken}  = require('../../express/auth');
 
-router.get('/getTimesheet',verifyToken,timesheet.getTimesheet);
-router.get('/')
+
+router.post('/addApproverTimesheet',verifyToken,timesheet.addApproverTimesheet);
+router.post('/addTimesheetForEmployee',verifyToken,timesheet.addTimesheetForEmployee);
 router.post('/addTimeSheet',verifyToken,timesheet.addTimeSheet);
 router.put('/editTimeSheet',verifyToken,timesheet.editTimeSheet);
 router.delete('/deletetimesheet/:id',verifyToken,timesheet.deleteTimeSheet);

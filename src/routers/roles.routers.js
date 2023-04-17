@@ -13,6 +13,7 @@ router.delete('/deleteroles/:id',verifyToken,roles.deleteroles)
 
 
 
+
 module.exports=router;
 
 
