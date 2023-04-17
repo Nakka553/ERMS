@@ -23,7 +23,7 @@ const addAllEmployeeDetailsModel = async (data) => {
         '${data.INTERMEDIATE}','${data.INTER_BOARD_NAME}','${data.INTER_PASSEDOUT_YEAR}','${data.INTER_PERCENTAGE}','${data.GRADUATION}',
         '${data.UG_UNIVERSITY}','${data.UG_PASSEDOUT_YEAR}','${data.UG_PERCENTAGE}','${data.POST_GRADUTATION}','${data.PG_UNIVERSITY}',
         '${data.PG_PASSEDOUT_YEAR}','${data.PG_PERCENTAGE}','${data.COMPANY_NAME}','${data.DESIGNATION}','${data.FROM_DATE}',
-        '${data.TO_DATE}','${data.DEPT_ID}','${data.PROJECT_ID}','${data.ROLE_ID}','${data.PASSWORD}','${data.ROLE_NAME}'`
+        '${data.TO_DATE}','${data.DEPT_ID}','${data.PROJECT_ID}','${data.ROLE_ID}','${data.PASSWORD}'`
 
         return await executeQuery(q);
     }
@@ -111,7 +111,8 @@ const getEmployeeModelAddress = async () => {
     try {
         let q = `EXECUTE SP_get_employeeAddress`
         return await executeQuery(q)
-    } catch (error) {
+    } 
+    catch (error) {
         throw new Error(err);
 
     }
