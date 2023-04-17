@@ -4,12 +4,12 @@ const timesheetModel=require('../models/timesheet.model');
 const addApproverTimesheetServices = async (req) =>{
     try {
         let data=req.body
-        console.log(data);
+       
         let result=await timesheetModel.addApproverTimesheetModel(data.EMPLOYEE_ID);
-        console.log(result.recordset);
+       
         return {status:200,message:"success",data:result.recordsets[0]}
     } catch (error) {
-        console.log(error);
+       
     return{status:401,message:"error",data:"something went wrong"}
         
     }
@@ -17,12 +17,12 @@ const addApproverTimesheetServices = async (req) =>{
 const addTimesheetForEmployeeServices = async (req) =>{
     try {
         let data=req.body
-        console.log(data);
+       
         let result=await timesheetModel.addTimesheetForEmployeeModel(data.EMPLOYEE_ID);
-        console.log(result.recordset);
+       
         return {status:200,message:"success",data:result.recordsets[0]}
     } catch (error) {
-        console.log(error);
+       
     return{status:401,message:"error",data:"something went wrong"}
         
     }
@@ -32,14 +32,14 @@ const addTimesheetForEmployeeServices = async (req) =>{
 const addTimeSheetServices = async (req) => {
     try {
         let data = req.body;
-        console.log(data)
+      
         await timesheetModel.addTimeSheetDetailsModel(data)
 
         return { status: 200, message: "success", data: []}
 
     } 
     catch (error) {
-        console.log(error)
+       
          return { status: 400, message: "error", data: "something went wrong" }
         
     }
@@ -48,14 +48,14 @@ const addTimeSheetServices = async (req) => {
 const editTimeSheetServices = async (req) => {
     try {
         let data = req.body;
-        console.log(data)
+       
         await timesheetModel.editTimeSheetDetailsModel(data)
 
         return { status: 200, message: "success", data: []}
 
     } 
     catch (error) {
-        console.log(error)
+       
          return { status: 400, message: "error", data: "something went wrong" }
         
     }
@@ -95,13 +95,13 @@ const deleteTimeSheetServices = async (req) =>{
             ans.push(result.recordset)
         }
 
-        console.log(ans);
+       
 
         return { status: 200, message: "success", data: ans }
 
     }
     catch (error) {
-        console.log(error)
+      
          return { status: 400, message: "error", data: "something went wrong" }
         
     }
