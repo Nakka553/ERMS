@@ -1,5 +1,6 @@
 const  express  = require("express");
 const router = express.Router() ;
+
 const leaveController= require("../controllers/leave.controller")
 
 const {verifyToken}=require('../../express/auth')
@@ -9,11 +10,11 @@ const {verifyToken}=require('../../express/auth')
 
 
 
-router.post('/getApproverLeave',verifyToken,leaveController.addApproverLeaveController);
-router.post('/addLeave',verifyToken,leaveController.addLeaveController);
-router.put('/editLeave',verifyToken,leaveController.editLeaveController);
-router.delete('/deleteLeave/:id',verifyToken,leaveController.deleteLeaveController);
-router.post('/postLeaveforEmployeeID',verifyToken,leaveController.addLeaveforEmployeeIDController);
 
+router.post('/getLeaves',verifyToken,leaveController.getApproverLeaveController);
+router.post('/addLeaves',verifyToken,leaveController.addLeaveController);
+router.put('/editLeaves',verifyToken,leaveController.editLeaveController);
+
+router.delete('/deleteLeave/:id',verifyToken,leaveController.deleteLeaveController);
 
 module.exports=router;

@@ -139,7 +139,7 @@ const addAllEmployeeServices = async (req) => {
     return { status: 200, message: "success", data: [] }
   }
   catch (error) {
-    console.log(error)
+   
     return { status: 400, message: "error", data: "something went wrong" }
 
   }

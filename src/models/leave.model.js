@@ -1,7 +1,7 @@
 const { executeQuery } = require('../models/executeQuery')
 
 
-const addApproverLeaveModel = async(EMPLOYEE_ID) =>{
+const getApproverLeaveModel = async(EMPLOYEE_ID) =>{
     try {
         let q=`EXECUTE SP_get_Approved_leaves '${EMPLOYEE_ID}'` 
         return await executeQuery(q)
@@ -52,7 +52,7 @@ const addLeaveforEmployeeIDModel = async(data) =>{
 }
 
 module.exports={
-    addApproverLeaveModel,
+    getApproverLeaveModel,
     addLeaveModel,
     editLeaveModel,
     deleteLeaveModel,

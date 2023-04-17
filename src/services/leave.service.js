@@ -1,10 +1,10 @@
 const leaveModel=require('../models/leave.model');
 
 
-const addApproverLeaveServices = async (req) =>{
+const getApproverLeaveServices = async (req) =>{
     try {
          let data = req.body;
-        let result=await leaveModel.addApproverLeaveModel(data.EMPLOYEE_ID);
+        let result=await leaveModel.getApproverLeaveModel(data.EMPLOYEE_ID);
         return {status:200,message:"success",data:result.recordsets[0]}
 
     } catch (error) {
@@ -63,7 +63,7 @@ const addLeaveforEmployeeIDServices = async (req) =>{
 }
 
 module.exports={
-    addApproverLeaveServices,
+    getApproverLeaveServices,
     addLeaveServices,
     editLeaveServices,
     deleteLeaveServices,
