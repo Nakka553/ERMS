@@ -1,6 +1,5 @@
 const leaveModel=require('../models/leave.model');
 
-
 const getLeaveServices = async (req) =>{
     try {
          let data = req.body;
