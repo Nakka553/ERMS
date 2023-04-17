@@ -4,11 +4,9 @@ const leaveController= require("../controllers/leave.controller")
 
 const {verifyToken}=require('../../express/auth')
 
-router.post('/getApproverLeave',verifyToken,leaveController.addApproverLeaveController);
-router.post('/addLeave',verifyToken,leaveController.addLeaveController);
-router.put('/editLeave',verifyToken,leaveController.editLeaveController);
+router.post('/getLeaves',verifyToken,leaveController.addApproverLeaveController);
+router.post('/addLeaves',verifyToken,leaveController.addLeaveController);
+router.put('/editLeaves',verifyToken,leaveController.editLeaveController);
 router.delete('/deleteLeave/:id',verifyToken,leaveController.deleteLeaveController);
-
-router.post('/postLeaveforEmployeeID',verifyToken,leaveController.addLeaveforEmployeeIDController);
 
 module.exports=router;

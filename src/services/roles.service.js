@@ -1,18 +1,6 @@
 const roleModel=require('../models/roles.model');
 
 
-// const getRolesServices = async (req) =>{
-//     try {
-//         let id = req.params.id;
-//         let result=await roleModel.getRolesModel(id);
-//         return {status:200,message:"success",data:result.recordsets[0]}
-//     } catch (error) {
-//     return{status:400,message:"error",data:"something went wrong"}
-        
-//     }
-// }
-
-
 const getRolesServices = async () => {
     try {
        // extract the ID parameter from req.params
