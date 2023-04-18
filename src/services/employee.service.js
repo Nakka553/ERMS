@@ -39,6 +39,10 @@ const getallEmployeeDetailsServices = async () => {
         x['PROJECT_ID']=i.PROJECT_ID;
         x['DEPT_ID']=i.DEPT_ID;
         x['ROLE_ID']=i.ROLE_ID;
+        x['ROLE_NAME']=i.ROLE_NAME;
+        x['DEPT_NAME']=i.DEPT_NAME;
+        x['PROJECT_NAME']=i.PROJECT_NAME
+
 
 
         //  address record 
@@ -264,6 +268,7 @@ const getallEmployeeDetailsByIdServices = async (req) => {
           'FROM_DATE': i.FROM_DATE,
           'TO_DATE': i.TO_DATE
         };
+
         // console.log("i", i)
         // return i
         finalArray.push(x)
