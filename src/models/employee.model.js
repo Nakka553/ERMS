@@ -4,7 +4,7 @@ const { executeQuery } = require('../models/executeQuery')
 const getallEmployeeDetailsModel = async (data) => {
     console.log('id',data);
     try {
-        let q = `EXECUTE SP_get_allEmployeeDetails`
+        let q = `EXECUTE SP_get_AllEmployeeDeatils`
         return await executeQuery(q)
     } 
     catch (err) {
