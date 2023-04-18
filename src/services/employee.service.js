@@ -268,13 +268,12 @@ const getallEmployeeDetailsByIdServices = async (req) => {
           'FROM_DATE': i.FROM_DATE,
           'TO_DATE': i.TO_DATE
         };
-<<<<<<< HEAD
+
 
         // console.log("i", i)
         // return i
-=======
         
->>>>>>> da51696680ed1a7a97571cfec574c3756a1a9b91
+ 
         finalArray.push(x)
       });
       return { status: 200, message: "success", data: finalArray }
