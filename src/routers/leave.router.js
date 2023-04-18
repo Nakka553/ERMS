@@ -10,6 +10,4 @@ router.delete('/deleteLeave/:id',verifyToken,leaveController.deleteLeaveControll
 router.put('/getLeavesStatus',verifyToken,leaveController.getLeavesStatusController);
 router.post('/getLeavesForParticularDates',verifyToken,leaveController.getLeavesForParticularDatesController);
 
-
-
 module.exports=router;
