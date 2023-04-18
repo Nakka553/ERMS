@@ -1,15 +1,15 @@
 const { executeQuery } = require('../models/executeQuery')
 
 
-const getApproverLeaveModel = async(EMPLOYEE_ID) =>{
-    try {
-        let q=`EXECUTE SP_get_Approved_leaves '${EMPLOYEE_ID}'` 
-        return await executeQuery(q)
-    } catch (error) {
-        throw new Error(err);
+// const getApproverLeaveModel = async(EMPLOYEE_ID) =>{
+//     try {
+//         let q=`EXECUTE SP_get_Approved_leaves '${EMPLOYEE_ID}'` 
+//         return await executeQuery(q)
+//     } catch (error) {
+//         throw new Error(err);
         
-    }
-}
+//     }
+// }
 
 const addLeaveModel = async(data) =>{
     try {
@@ -61,11 +61,25 @@ const addLeaveforEmployeeIDModel = async(data) =>{
     }
 }
 
+const getLeavesForParticularDatesModel=async(data)=>{
+    try {
+
+        let q=`EXECUTE SP_get_idBased_leaves '${data.EMPLOYEE_ID}','${data.START_DATE}','${data.END_DATE}'`
+        return await executeQuery(q);
+    } 
+    catch (err) {
+        
+        throw new Error(err)  
+    }
+}
+
+
 module.exports={
-    getApproverLeaveModel,
+    // getApproverLeaveModel,
     addLeaveModel,
     editLeaveModel,
     deleteLeaveModel,
     getLeavesStatusModel,
-    addLeaveforEmployeeIDModel
+    addLeaveforEmployeeIDModel,
+    getLeavesForParticularDatesModel
 }

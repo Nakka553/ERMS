@@ -9,6 +9,15 @@ const getProjectModel = async() =>{
         
     }
 }
+const getEmpProjectDetailsModel = async(data) =>{
+    try {
+        let q=`EXECUTE SP_get_empProjectDetails '${data.EMPLOYEE_ID}'`
+        return await executeQuery(q)
+    } catch (error) {
+        throw new Error(err);
+        
+    }
+}
 
 const addProjectModel = async(data) =>{
     try {
@@ -43,6 +52,7 @@ const deleteProjectModel = async(data) => {
 
 module.exports={
     getProjectModel,
+    getEmpProjectDetailsModel,
     addProjectModel,
     editProjectModel,
     deleteProjectModel
