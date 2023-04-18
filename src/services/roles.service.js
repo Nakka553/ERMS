@@ -13,11 +13,11 @@ const roleModel=require('../models/roles.model');
 // }
 
 
-const getRolesServices = async (req) => {
+const getRolesServices = async () => {
     try {
        // extract the ID parameter from req.params
-       let data = req.body;
-      let result = await roleModel.getRolesModel(data.EMPLOYEE_ID);
+      //  let data = req.body;
+      let result = await roleModel.getRolesModel();
       return { status: 200, message: "success", data: result.recordsets[0] };
     } catch (error) {
       

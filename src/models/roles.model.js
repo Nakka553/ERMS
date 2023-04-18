@@ -1,16 +1,17 @@
 const { executeQuery } = require('../models/executeQuery')
 
+
 const getRolesModel = async () => {
     try {
       let q = `EXECUTE SP_get_roles`;
       return await executeQuery(q);
     } catch (error) {
-        console.log(error);
+        
       throw new Error(error);
     }
   };
-
-  
+ 
+ 
 const checkRoleDetailsModel = async (data) => {
 
     try {
@@ -62,5 +63,6 @@ module.exports={
     editRoleDetailsModel,
     deleteRolesModel,
     checkRoleDetailsModel
+  
    
 }
