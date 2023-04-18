@@ -11,6 +11,3 @@ router.put('/getTimesheetStatus',verifyToken,timesheet.getTimesheetStatusControl
 router.post('/getTimesheetForParticularDates',verifyToken,timesheet.getTimesheetForParticularDatesController);
 
 module.exports=router;
-
-
-
