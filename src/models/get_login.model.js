@@ -1,4 +1,4 @@
-const {poolPromise}=require('../../database');
+const {executeQuery} = require('./executeQuery')
 
 const loginDetailsModel = async (data) => {
     try {
@@ -9,16 +9,6 @@ const loginDetailsModel = async (data) => {
     {
         throw new Error(error);
 
-    }
-}
-
-const executeQuery=async(query)=>{
-    try{
-        let pool=await poolPromise;
-        return await pool.query(query);
-    
-    }catch(err){
-        throw new Error(err);
     }
 }
 

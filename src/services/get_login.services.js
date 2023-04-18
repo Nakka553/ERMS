@@ -19,7 +19,12 @@ const LoginServices = async (req) => {
                         expiresIn: "1h",
                     }
                 );
-                return { status: 200, message: "Logged in Successfully", data: {token,ROLE_NAME:result.recordset[0].ROLE_NAME,ROLE_ID:result.recordset[0].ROLE_ID,username:data.username,EMPLOYEE_ID:result.recordset[0].EMPLOYEE_ID} }
+                return { status: 200, message: "Logged in Successfully", data: {token,username:data.username,
+                    EMPLOYEE_ID:result.recordset[0].EMPLOYEE_ID,
+                    EMPLOYEE_NAME:result.recordset[0].EMPLOYEE_NAME,
+                    ROLE_ID:result.recordset[0].ROLE_ID,
+                    ROLE_NAME:result.recordset[0].ROLE_NAME
+                    }}
             }
             return { status: 300, message: "Invalid password", data: [] }
         }
@@ -28,7 +33,6 @@ const LoginServices = async (req) => {
         }
     }
     catch (error) {
-        // console.log(error)
         return { status: 400, message: "Error", data: error }
     }
 

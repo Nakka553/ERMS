@@ -2,6 +2,8 @@
 node_modules/
 
 ---------------------------login with registered user role based--------------------------
+EMPLOYEE_ID:result.recordset[0].EMPLOYEE_ID,
+ROLE_ID:result.recordset[0].ROLE_ID,ROLE_NAME:result.recordset[0].ROLE_NAME
 
 router.post("/login", async (req, res) => {
     const { password, email } = req.body;
