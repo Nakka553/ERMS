@@ -12,6 +12,19 @@ const getProjectServices = async () => {
     }
   }
 
+  
+const getEmpProjectDetailsServices = async (req) => {
+  try {
+    let data = req.body;
+    let result = await projectModel.getEmpProjectDetailsModel(data);
+    return { status: 200, message: "success", data: result.recordsets[0] }
+  } catch (error) {
+    return { status: 401, message: "error", data: "something went wrong" }
+
+  }
+}
+
+
 const addProjectServices = async (req) =>{
     try {
         let data = req.body;
@@ -47,6 +60,7 @@ const deleteProjectServices = async (req) =>{
 
 module.exports={
     getProjectServices,
+    getEmpProjectDetailsServices,
     addProjectServices,
     editProjectServices,
     deleteProjectServices

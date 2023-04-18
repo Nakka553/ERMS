@@ -1,18 +1,18 @@
 const leaveModel=require('../models/leave.model');
 
 
-const getApproverLeaveServices = async (req) =>{
-    try {
-         let data = req.body;
-        let result=await leaveModel.getApproverLeaveModel(data.EMPLOYEE_ID);
-        return {status:200,message:"success",data:result.recordsets[0]}
+// const getApproverLeaveServices = async (req) =>{
+//     try {
+//          let data = req.body;
+//         let result=await leaveModel.getApproverLeaveModel(data.EMPLOYEE_ID);
+//         return {status:200,message:"success",data:result.recordsets[0]}
 
-    } catch (error) {
+//     } catch (error) {
         
-    return{status:401,message:"error",data:"something went wrong"}
+//     return{status:401,message:"error",data:"something went wrong"}
         
-    }
-}
+//     }
+// }
 
 const addLeaveServices = async (req) =>{
     try {
@@ -77,11 +77,29 @@ const addLeaveforEmployeeIDServices = async (req) =>{
     }
 }
 
+const  getLeavesForParticularDatesServices = async (req) => {
+    try {
+        let data = req.body;
+        // let ans = []
+        // for(let i = 0;i< (data.START_DATE).length;i++){
+            const result =  await leaveModel.getLeavesForParticularDatesModel(data)
+        //     ans.push(result.recordset)
+        // }
+        return { status: 200, message: "success", data: result.recordsets[0]}
+    }
+    catch (error) {
+      
+         return { status: 400, message: "error", data: "something went wrong" }   
+    }
+}
+
 module.exports={
-    getApproverLeaveServices,
+    // getApproverLeaveServices,
     addLeaveServices,
     editLeaveServices,
     deleteLeaveServices,
     getLeavesStatusServices,
-    addLeaveforEmployeeIDServices
+    addLeaveforEmployeeIDServices,
+    getLeavesForParticularDatesServices
+
 }

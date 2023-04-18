@@ -58,7 +58,7 @@ const deleteTimeSheetServices = async (req) =>{
         let data = req.body;
         let ans = []
         for(let i = 0;i< (data.STARTDATE).length;i++){
-            const result =  await timesheetModel.getParticularDatesrolesModel(data.EMPLOYEE_ID,data.STARTDATE[i])
+            const result =  await timesheetModel.getParticularDatesTimesheetModel(data.EMPLOYEE_ID,data.STARTDATE[i])
             ans.push(result.recordset)
         }
         return { status: 200, message: "success", data: ans }

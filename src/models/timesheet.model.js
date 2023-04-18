@@ -51,7 +51,7 @@ const getTimesheetStatusModel = async(data) =>{
     }
 }
 
-const getParticularDatesrolesModel=async(EMPLOYEE_ID,STARTDATE)=>{
+const getParticularDatesTimesheetModel=async(EMPLOYEE_ID,STARTDATE)=>{
     try {
 
         let q=`EXECUTE post_particular_dates '${EMPLOYEE_ID}','${STARTDATE}'`
@@ -69,7 +69,7 @@ module.exports={
     editTimeSheetDetailsModel,
     deletetimesheetModel,
     getTimesheetStatusModel,
-    getParticularDatesrolesModel
+    getParticularDatesTimesheetModel
 }
 
 

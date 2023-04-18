@@ -35,10 +35,8 @@ const LoginServices = async (req) => {
     catch (error) {
         return { status: 400, message: "Error", data: error }
     }
-
 }
 
 module.exports = {
     LoginServices
-
 }
