@@ -1,7 +1,8 @@
 const { executeQuery } = require('../models/executeQuery')
 
 
-const getallEmployeeDetailsModel = async () => {
+const getallEmployeeDetailsModel = async (data) => {
+    console.log('id',data);
     try {
         let q = `EXECUTE SP_get_allEmployeeDetails`
         return await executeQuery(q)
@@ -161,6 +162,16 @@ const deleteAllEmployeeDetailsModel = async (data) => {
         throw new Error(err)
     }
 }
+const getallEmployeeDetailsByIdModel = async (data) => {
+    console.log('id',data);
+    try {
+        let q = `EXECUTE  SP_get_AllEmployeeDeatilsByID '${data.id}'`
+        return await executeQuery(q)
+    } 
+    catch (err) {
+        throw new Error(err);
+    }
+}
 module.exports = {
     getallEmployeeDetailsModel,
     editAllEmployeesDetailsModel,
@@ -170,7 +181,8 @@ module.exports = {
     getWorkExperienceModel,
     checkEmployeeDetailsModel,
     addAllEmployeeDetailsModel,
-    deleteAllEmployeeDetailsModel
+    deleteAllEmployeeDetailsModel,
+    getallEmployeeDetailsByIdModel
 }
 
 

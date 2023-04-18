@@ -12,6 +12,12 @@ const getallEmployeeDetails = async (req, res) => {
 
 }
 
+const getallEmployeeByIdDetails = async (req, res) => {
+
+    callService(employeeServices.getallEmployeeDetailsByIdServices, req, res)
+
+}
+
 const editAllEmployeesDetailsController = async (req, res) => {
 
     callService(employeeServices.editAllEmployeesDetailsServices, req, res)
@@ -52,5 +58,6 @@ module.exports = {
     getEmployeeEducation,
     getWorkExperience,
     addAllEmployeeDetails,
+    getallEmployeeByIdDetails,
     callService
 }
