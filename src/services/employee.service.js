@@ -190,7 +190,7 @@ const  deleteAllEmployeesDeatilsServices = async (req) =>{
 const getallEmployeeDetailsByIdServices = async (req) => {
   try {
     let data = req.params;
-    console.log('manasa',data);
+    
     let result = await employeeModel.getallEmployeeDetailsByIdModel(data);
 
     let finalArray = []
@@ -268,12 +268,15 @@ const getallEmployeeDetailsByIdServices = async (req) => {
           'FROM_DATE': i.FROM_DATE,
           'TO_DATE': i.TO_DATE
         };
+<<<<<<< HEAD
 
         // console.log("i", i)
         // return i
+=======
+        
+>>>>>>> da51696680ed1a7a97571cfec574c3756a1a9b91
         finalArray.push(x)
       });
-      // console.log(finalArray);
       return { status: 200, message: "success", data: finalArray }
 
     } else {
