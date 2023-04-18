@@ -8,7 +8,7 @@ router.post('/addLeaves',verifyToken,leaveController.addLeaveController);
 router.put('/editLeaves',verifyToken,leaveController.editLeaveController);
 router.delete('/deleteLeave/:id',verifyToken,leaveController.deleteLeaveController);
 router.put('/getLeavesStatus',verifyToken,leaveController.getLeavesStatusController);
-router.get('/getLeavesForParticularDates',verifyToken,leaveController.getLeavesForParticularDatesController);
+router.post('/getLeavesForParticularDates',verifyToken,leaveController.getLeavesForParticularDatesController);
 
 
 
