@@ -4,6 +4,7 @@ const employee=require('../controllers/employee.controller');
 const  {verifyToken}  = require('../../express/auth');
 
 router.get('/getallemployeeDetails',verifyToken,employee.getallEmployeeDetails);
+router.get('/getallEmployeeByIdDetails/:id',verifyToken,employee.getallEmployeeByIdDetails);
 router.put('/editAllEmployeesDetails',verifyToken,employee.editAllEmployeesDetailsController);
 router.get('/getemployeeAddress',verifyToken,employee.getEmployeeAddress);
 router.get('/getemployeeEducation',verifyToken,employee.getEmployeeEducation);

@@ -1,11 +1,11 @@
 const { executeQuery } = require('../models/executeQuery')
 
-const getRolesModel = async (EMPLOYEE_ID) => {
+const getRolesModel = async () => {
     try {
-      let q = `EXECUTE SP_get_roles '${EMPLOYEE_ID}'`;
+      let q = `EXECUTE SP_get_roles`;
       return await executeQuery(q);
     } catch (error) {
-        
+        console.log(error);
       throw new Error(error);
     }
   };
