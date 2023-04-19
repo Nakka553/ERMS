@@ -175,6 +175,20 @@ const editAllEmployeesDetailsServices = async (req) => {
   }
 }
 
+const editAllEmployeesDetailsByIdServices = async (req) => {
+  try {
+    let data = req.body;
+    // let result = await employeeModel.checkEmployeeDetailsModel(data);
+    // if(result?.recordset?.length>0){
+    //   return { status: 300, message: "Employee Already Existed", data: [] }
+    // }
+    await employeeModel.editAllEmployeesDetailsByIdModel(data);
+    return { status: 200, message: "successfully updated", data: [] }
+  } catch (error) {
+    return { status: 400, message: "error", data: error }
+  }
+}
+
 
 
 const  deleteAllEmployeesDeatilsServices = async (req) =>{
@@ -310,7 +324,8 @@ module.exports = {
   editAllEmployeesDetailsServices,
   deleteAllEmployeesDeatilsServices,
   getEmpProjectManagerDetailsServices,
-  getallEmployeeDetailsByIdServices
+  getallEmployeeDetailsByIdServices,
+  editAllEmployeesDetailsByIdServices
  
 
 }

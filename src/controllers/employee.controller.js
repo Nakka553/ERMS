@@ -23,6 +23,12 @@ const editAllEmployeesDetailsController = async (req, res) => {
     callService(employeeServices.editAllEmployeesDetailsServices, req, res)
 
 }
+
+const editAllEmployeesDetailsById = async (req, res) => {
+
+    callService(employeeServices.editAllEmployeesDetailsByIdServices, req, res)
+
+}
 const deleteAllEmployeesDetailsController = async(req, res)=>{
 
     callService(employeeServices.deleteAllEmployeesDeatilsServices, req, res)
@@ -66,5 +72,6 @@ module.exports = {
     addAllEmployeeDetails,
     getallEmployeeByIdDetails,
     getEmpProjectManagerDetailsController,
+    editAllEmployeesDetailsById,
     callService
 }
