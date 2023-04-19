@@ -9,6 +9,7 @@ router.put('/editAllEmployeesDetails',verifyToken,employee.editAllEmployeesDetai
 router.post('/addAllEmployeeDetails',verifyToken,employee.addAllEmployeeDetails);
 router.delete('/deleteAllEmployeeDetils/:id',verifyToken,employee.deleteAllEmployeesDetailsController);
 router.post('/getEmpProjectManagerDetails',verifyToken,employee.getEmpProjectManagerDetailsController);
+router.put('/editAllEmployeesDetailsById/:id',verifyToken,employee.editAllEmployeesDetailsById);
 
 router.get('/getemployeeAddress',verifyToken,employee.getEmployeeAddress);
 router.get('/getemployeeEducation',verifyToken,employee.getEmployeeEducation);
