@@ -6,16 +6,14 @@ const  {verifyToken}  = require('../../express/auth');
 router.get('/getallemployeeDetails',verifyToken,employee.getallEmployeeDetails);
 router.get('/getallEmployeeByIdDetails/:id',verifyToken,employee.getallEmployeeByIdDetails);
 router.put('/editAllEmployeesDetails',verifyToken,employee.editAllEmployeesDetailsController);
-router.get('/getemployeeAddress',verifyToken,employee.getEmployeeAddress);
-router.get('/getemployeeEducation',verifyToken,employee.getEmployeeEducation);
-router.get('/getWorkExperience',verifyToken,employee.getWorkExperience);
-router.get('/getemployee',verifyToken,employee.getEmployee);
 router.post('/addAllEmployeeDetails',verifyToken,employee.addAllEmployeeDetails);
 router.delete('/deleteAllEmployeeDetils/:id',verifyToken,employee.deleteAllEmployeesDetailsController);
 router.post('/getEmpProjectManagerDetails',verifyToken,employee.getEmpProjectManagerDetailsController);
 router.put('/editAllEmployeesDetailsById/:id',verifyToken,employee.editAllEmployeesDetailsById);
 
-
+router.get('/getemployeeAddress',verifyToken,employee.getEmployeeAddress);
+router.get('/getemployeeEducation',verifyToken,employee.getEmployeeEducation);
+router.get('/getWorkExperience',verifyToken,employee.getWorkExperience);
+router.get('/getemployee',verifyToken,employee.getEmployee);
 
 module.exports=router;
-
