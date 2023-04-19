@@ -14,9 +14,11 @@ const getDepartmentModel = async () => {
 
 const addDepartmentModel = async (data) => {
     try {
+        
         let q = `EXECUTE SP_post_department '${data.DEPT_NAME}','${data.HOD}','${data.DEPT_EMAIL}','${data.DEPT_CONTACTNUMBER}'`
         return await executeQuery(q)
-    } catch (error) {
+    } 
+    catch (error) {
         throw new Error(err);
 
     }
