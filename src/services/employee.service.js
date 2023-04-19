@@ -287,6 +287,19 @@ const getallEmployeeDetailsByIdServices = async (req) => {
   }
 }
 
+
+const getEmpProjectManagerDetailsServices = async (req) => {
+  try {
+    let data=req.body;
+    let result = await employeeModel.getEmpProjectManagerDetailsModel(data);
+    return { status: 200, message: "success", data: result.recordsets[0] }
+  } catch (error) {
+    return { status: 400, message: "error", data: "something went wrong" }
+
+  }
+}
+
+
 module.exports = {
   getallEmployeeDetailsServices,
   getEmployeeServices,
@@ -296,6 +309,7 @@ module.exports = {
   addAllEmployeeServices,
   editAllEmployeesDetailsServices,
   deleteAllEmployeesDeatilsServices,
+  getEmpProjectManagerDetailsServices,
   getallEmployeeDetailsByIdServices
  
 

@@ -15,7 +15,7 @@ const getallEmployeeDetailsModel = async (data) => {
 const addAllEmployeeDetailsModel = async (data) => {
     try {
         console.log(data);
-        let q = `EXECUTE SP_add_allEmployeeDetails'${data.FIRST_NAME}','${data.MIDDLE_NAME}','${data.LAST_NAME}','${data.GENDER}',
+        let q = `EXECUTE SP_add_allEmployeeDetails  '${data.FIRST_NAME}','${data.MIDDLE_NAME}','${data.LAST_NAME}','${data.GENDER}',
         '${data.CONTACT_NUMBER}','${data.EMAIL_ID}','${data.PANCARD_NUMBER}','${data.DOB}','${data.AADHAR_NUMBER}','${data.DATE_OF_JOINING}',
         '${data.LAST_WORKING_DAY}','${data.EMPLOYEE_NUMBER}','${data.BLOOD_GROUP}','${data.ACTIVATION_STATUS}','${data.PERMANENT_ADDRESS}',
         '${data.HOUSE_NO}','${data.STREET_NAME}','${data.CITY}','${data.DISTRICT}','${data.STATE}','${data.PINCODE}','${data.COUNTRY}',
@@ -91,8 +91,7 @@ const editAllEmployeesDetailsModel = async (data) => {
         '${data.COMPANY_NAME}',
         '${data.DESIGNATION}',
         '${data.FROM_DATE}',
-        '${data.TO_DATE}',
-        '${data.ROLE_NAME}','${data.PROJECT_NAME}','${data.DEPT_NAME}'`
+        '${data.TO_DATE}'`
       return await executeQuery(q)
     } 
     catch (error) {
@@ -174,6 +173,17 @@ const getallEmployeeDetailsByIdModel = async (data) => {
         throw new Error(err);
     }
 }
+
+const getEmpProjectManagerDetailsModel = async (data) => {
+    try {
+        let q = `EXECUTE SP_get_empProjectManagerDeatils '${data.EMPLOYEE_ID}'`
+        return await executeQuery(q)
+    } catch (error) {
+        throw new Error(err);
+
+    }
+}
+
 module.exports = {
     getallEmployeeDetailsModel,
     editAllEmployeesDetailsModel,
@@ -184,7 +194,8 @@ module.exports = {
     checkEmployeeDetailsModel,
     addAllEmployeeDetailsModel,
     deleteAllEmployeeDetailsModel,
-    getallEmployeeDetailsByIdModel
+    getallEmployeeDetailsByIdModel,
+    getEmpProjectManagerDetailsModel
 }
 
 

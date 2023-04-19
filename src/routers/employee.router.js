@@ -12,6 +12,8 @@ router.get('/getWorkExperience',verifyToken,employee.getWorkExperience);
 router.get('/getemployee',verifyToken,employee.getEmployee);
 router.post('/addAllEmployeeDetails',verifyToken,employee.addAllEmployeeDetails);
 router.delete('/deleteAllEmployeeDetils/:id',verifyToken,employee.deleteAllEmployeesDetailsController);
+router.post('/getEmpProjectManagerDetails',verifyToken,employee.getEmpProjectManagerDetailsController);
+
 
 
 module.exports=router;
