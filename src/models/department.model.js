@@ -40,9 +40,21 @@ const deleteDepartmentModel = async (data) => {
     }
 }
 
+const checkDepartmentDetailsModel = async (data) => {
+    try {
+        let q = ` SP_check_department '${data.DEPT_NAME}'`
+        return await executeQuery(q);
+    } catch (error) {
+        console.log(err)
+        throw new Error(err)
+    }
+
+}
+
 module.exports = {
     getDepartmentModel,
     addDepartmentModel,
     editDepartmentModel,
-    deleteDepartmentModel
+    deleteDepartmentModel,
+    checkDepartmentDetailsModel
 }

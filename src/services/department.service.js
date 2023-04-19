@@ -17,7 +17,11 @@ const getDepartmentServices = async () =>{
 const addDepartmentServices = async (req) =>{
     try {
         let data = req.body;
-        let result=await departmentModel.addDepartmentModel(data);
+        let result = await departmentModel.checkDepartmentDetailsModel(data);
+        if (result?.recordset?.length > 0) {
+          return { status: 300, message: "Department Already existed", data: [] }
+        }
+        await departmentModel.addDepartmentModel(data);
         return {status:200,message:"success",data:[]}
     } 
     
