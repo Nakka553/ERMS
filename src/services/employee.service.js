@@ -160,7 +160,6 @@ const getWorkExperienceServices = async () => {
   }
 }
 
-
 const editAllEmployeesDetailsServices = async (req) => {
   try {
     let data = req.body;

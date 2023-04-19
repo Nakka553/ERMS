@@ -18,7 +18,7 @@ const addLeaveServices = async (req) =>{
     try {
         let data = req.body;
         let result=await leaveModel.addLeaveModel(data);
-        return {status:200,message:"success",data:[]}
+        return {status:200,message:"Employee Successfully Added",data:[]}
     } catch (error) {
     return{status:401,message:"error",data:"something went wrong"}
         
