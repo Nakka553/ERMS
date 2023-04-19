@@ -8,15 +8,8 @@ const getWishes = async(req,res) => {
     
 }
 
-const getWishesCount = async(req,res) => {
-    
-    callService(wishesServices.getWishesCountServices,req,res)
-    
-}
-
 module.exports={
 
-    getWishes,
-    getWishesCount
+    getWishes
 
 }
