@@ -287,12 +287,6 @@ const getallEmployeeDetailsByIdServices = async (req) => {
   }
 }
 
-
-
-
-
-
-
 module.exports = {
   getallEmployeeDetailsServices,
   getEmployeeServices,

@@ -15,7 +15,7 @@ const getallEmployeeDetailsModel = async (data) => {
 const addAllEmployeeDetailsModel = async (data) => {
     try {
         console.log(data);
-        let q = `EXECUTE SP_add_allEmployeeDetails  '${data.FIRST_NAME}','${data.MIDDLE_NAME}','${data.LAST_NAME}','${data.GENDER}',
+        let q = `EXECUTE SP_add_allEmployeeDetails '${data.FIRST_NAME}','${data.MIDDLE_NAME}','${data.LAST_NAME}','${data.GENDER}',
         '${data.CONTACT_NUMBER}','${data.EMAIL_ID}','${data.PANCARD_NUMBER}','${data.DOB}','${data.AADHAR_NUMBER}','${data.DATE_OF_JOINING}',
         '${data.LAST_WORKING_DAY}','${data.EMPLOYEE_NUMBER}','${data.BLOOD_GROUP}','${data.ACTIVATION_STATUS}','${data.PERMANENT_ADDRESS}',
         '${data.HOUSE_NO}','${data.STREET_NAME}','${data.CITY}','${data.DISTRICT}','${data.STATE}','${data.PINCODE}','${data.COUNTRY}',
@@ -24,7 +24,7 @@ const addAllEmployeeDetailsModel = async (data) => {
         '${data.INTERMEDIATE}','${data.INTER_BOARD_NAME}','${data.INTER_PASSEDOUT_YEAR}','${data.INTER_PERCENTAGE}','${data.GRADUATION}',
         '${data.UG_UNIVERSITY}','${data.UG_PASSEDOUT_YEAR}','${data.UG_PERCENTAGE}','${data.POST_GRADUTATION}','${data.PG_UNIVERSITY}',
         '${data.PG_PASSEDOUT_YEAR}','${data.PG_PERCENTAGE}','${data.COMPANY_NAME}','${data.DESIGNATION}','${data.FROM_DATE}',
-        '${data.TO_DATE}','${data.DEPT_ID}','${data.PROJECT_ID}','${data.ROLE_ID}','${data.PASSWORD}'`
+        '${data.TO_DATE}','${data.DEPT_ID}','${data.PROJECT_ID}','${data.ROLE_ID}','${data.PASSWORD}','${data.ROLE_NAME}','${data.PROJECT_NAME}','${data.DEPT_NAME}'`
 
         return await executeQuery(q);
     }
@@ -91,7 +91,8 @@ const editAllEmployeesDetailsModel = async (data) => {
         '${data.COMPANY_NAME}',
         '${data.DESIGNATION}',
         '${data.FROM_DATE}',
-        '${data.TO_DATE}'`
+        '${data.TO_DATE}',
+        '${data.ROLE_NAME}','${data.PROJECT_NAME}','${data.DEPT_NAME}'`
       return await executeQuery(q)
     } 
     catch (error) {
